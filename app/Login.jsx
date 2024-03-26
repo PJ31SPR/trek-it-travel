@@ -14,7 +14,8 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth, db } from "../firebase";
+import { doc, setDoc } from 'firebase/firestore'
 
 
 const Login = () => {
@@ -49,34 +50,34 @@ const Login = () => {
     }
   };
 
-  const handleSignUp   = () => {
+  const handleSignUp   = async () => {
+    try{
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password)
+        // console.log(userCredential.user.uid, 'here')
+        // console.log(userCredential, 'userCred')
+        
+         const docRef = await setDoc(doc(db, "users", userCredential.user.uid), {
+             email: userCredential.user.email,
+             displayName: username,
+             photoURL: ''
+         })
+    
+         setEmail("");
+         setPassword("");
+         setConfirmPassword("");
+         setUsername("");
+         setError("");
+       }
+     //   setTimeout(() => {
+     //     setSuccessMessage("");
+     //   }, 3000);
+     // }
+     catch(error) {
+       setError("Error signing up or adding document: " + error.message);
+     };
+ }
+  
 
-    if (password !== confirmPassword) {
-        setError("Passwords do not match, please try again");
-        return;
-      }
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((result) => {
-        setSuccessMessage("User created successfully!");
-        setEmail("");
-        setPassword("");
-        setConfirmPassword("");
-        setError("");
-        setUsername("")
-
-        setTimeout(() => {
-          setSuccessMessage("");
-        }, 3000);
-      })
-      .catch((error) => {
-        setError("Error signing up: " + error.message);
-        setEmail("");
-        setPassword("");
-        setConfirmPassword("");
-        setUsername("")
-      });
-  };
 
   const handleSignIn = () => {
 
@@ -87,8 +88,6 @@ const Login = () => {
 
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
-        result.user.displayName = username
-        console.log(result.user, 'res.user')
         setEmail("");
         setPassword("");
         setConfirmPassword("");
@@ -136,6 +135,7 @@ const Login = () => {
         style={[styles.button, styles.signOutButton]}
       >
         <Text style={styles.buttonText}>Sign Out</Text>
+        
       </Pressable>
     ) : (
       <>
