@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text } from 'react-native'
-import { Button, SearchBar } from 'react-native-elements';
+import { Button, SearchBar } from 'react-native-elements'
 
 const Home = () => {
     const [search, setSearch] = useState('')
