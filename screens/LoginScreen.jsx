@@ -12,7 +12,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
-  signInWithPopup,
+  signInWithRedirect,
   signOut,
 } from "firebase/auth";
 import { auth, db } from "../firebase";
@@ -105,16 +105,16 @@ const Login = () => {
       });
   };
 
-  const handleGoogleSignIn = () => {
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        console.log("User signed in with Google:", result.user);
-      })
-      .catch((error) => {
-        setError("Error signing in with Google: " + error.message);
-      });
-  };
+  // const handleGoogleSignIn = () => {
+  //   const provider = new GoogleAuthProvider();
+  //   signInWithRedirect(auth, provider)
+  //     .then((result) => {
+  //       console.log("User signed in with Google:", result.user);
+  //     })
+  //     .catch((error) => {
+  //       setError("Error signing in with Google: " + error.message);
+  //     });
+  // };
 
   const handleSignOut = () => {
     signOut(auth)
@@ -194,12 +194,12 @@ const Login = () => {
               </Text>
             </Pressable>
 
-            <Pressable
+            {/* <Pressable
               onPress={handleGoogleSignIn}
               style={[styles.button, styles.googleButton]}
             >
               <Text style={styles.buttonText}>Sign in with Google</Text>
-            </Pressable>
+            </Pressable> */}
           </>
         )}
       </View>
