@@ -19,27 +19,14 @@ const Tab = createBottomTabNavigator();
 const MainTabNavigator = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Destinations" component={DestinationScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+      <Tab.Screen name="Destinations" component={DestinationScreen} options={{ headerShown: false }} />
+      <Tab.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
 
      
     </Tab.Navigator>
   );
 };
-//  {
-//   return (
-//     <NavigationContainer independent={true}>
-//       <Stack.Navigator initialRouteName="Login">
-//         <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
-//         <Stack.Screen options={{ headerShown: false }} name="Home" component={HomeScreen} />
-//         <Stack.Screen options={{ headerShown: false }} name="Header" component={Header} />
-//         <Stack.Screen options={{ headerShown: false }} name="Profile" component={ProfileScreen} />
-//         </Stack.Navigator>
-//       <StatusBar style="auto" />
-//     </NavigationContainer>
-//   );
-// }
 
 export default function App() {
 
