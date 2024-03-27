@@ -15,14 +15,23 @@ const HomeScreen = () => {
       .catch(error => alert(error.message))
   }
 
+
   return (
     <View style={styles.container}>
-      <Text>Email: {auth.currentUser?.email}</Text>
+      
       <TouchableOpacity
         onPress={handleSignOut}
         style={styles.button}
       >
         <Text style={styles.buttonText}>Sign out</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Profile')}
+        style={styles.button}
+        title="Go to Profile"
+      >
+        <Text style={styles.buttonText}>Profile</Text>
       </TouchableOpacity>
     </View>
   )
