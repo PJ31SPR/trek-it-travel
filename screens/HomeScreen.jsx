@@ -1,61 +1,86 @@
-import { useNavigation } from '@react-navigation/core'
-import React from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { auth } from '../firebase'
+import React, { useState } from 'react';
+import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { Button, SearchBar, Card } from 'react-native-elements';
+import Header from '../components/Header';
 
 const HomeScreen = () => {
-  const navigation = useNavigation()
+    const [search, setSearch] = useState('');
 
-  const handleSignOut = () => {
-    auth
-      .signOut()
-      .then(() => {
-        navigation.replace("Login")
-      })
-      .catch(error => alert(error.message))
-  }
+    function createNewItinerary() {
+        // Logic for creating a new itinerary
+    }
+    
+    function saveSearchTerm() {
+        console.log(search);
+        // Logic for saving search term
+    }
 
+    // Dummy data for featured destinations
+    const featuredDestinations = [
+        { id: 1, name: 'Destination 1', details: 'Details about Destination 1' },
+        { id: 2, name: 'Destination 2', details: 'Details about Destination 2' },
+        { id: 3, name: 'Destination 3', details: 'Details about Destination 3' },
+    ];
 
-  return (
-    <View style={styles.container}>
-      
-      <TouchableOpacity
-        onPress={handleSignOut}
-        style={styles.button}
-      >
-        <Text style={styles.buttonText}>Sign out</Text>
-      </TouchableOpacity>
+    return (
+        <View style={styles.container}>
+            {/* Custom Header */}
+            <Header title="Logo/Name" avatar="path_to_user_avatar" />
+            
+            {/* Search Bar */}
+            <SearchBar
+                placeholder="Type Here..."
+                onChangeText={setSearch}
+                value={search}
+            />
 
-      <TouchableOpacity
-        onPress={() => navigation.navigate('Profile')}
-        style={styles.button}
-        title="Go to Profile"
-      >
-        <Text style={styles.buttonText}>Profile</Text>
-      </TouchableOpacity>
-    </View>
-  )
-}
+            {/* Search Button */}
+            <Button
+                onPress={saveSearchTerm}
+                title="Search"
+                color="#841584"
+                accessibilityLabel="Search for this destination"
+            />
 
-export default HomeScreen
+            {/* Featured Destinations/Deals */}
+            <Text style={styles.sectionTitle}>Featured Destinations/Deals</Text>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.cardContainer}>
+                {/* Destination Cards */}
+                {featuredDestinations.map(destination => (
+                <Card key={destination.id}>
+                    <View style={styles.cardContent}>
+                        <Text style={styles.cardTitle}>{destination.name}</Text>
+                        <Text style={styles.cardDetails}>{destination.details}</Text>
+                        
+                    </View>
+                </Card>
+            ))}
+            </ScrollView>
 
+            {/* Create New Itinerary Button */}
+            <Button
+                onPress={createNewItinerary}
+                title="Create New Itinerary"
+                color="#841584"
+                accessibilityLabel="Create new trip itinerary"
+            />
+        </View>
+    );
+};
+
+// Styles
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-   button: {
-    backgroundColor: '#0782F9',
-    width: '60%',
-    padding: 15,
-    borderRadius: 10,
-    alignItems: 'center',
-    marginTop: 40,
-  },
-  buttonText: {
-    color: 'white',
-    fontWeight: '700',
-    fontSize: 16,
-  },
-})
+    cardContent: {
+        padding: 10,
+    },
+    cardTitle: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginBottom: 5,
+    },
+    cardDetails: {
+        fontSize: 14,
+    },
+});
+
+export default HomeScreen;
