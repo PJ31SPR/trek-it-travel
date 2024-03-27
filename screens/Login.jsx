@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/core'
 import React, { useState, useEffect } from "react";
 import {
   KeyboardAvoidingView,
@@ -29,11 +30,15 @@ const Login = () => {
   const [user, setUser] = useState(null);
   const [username, setUsername] = useState("")
 
+  const navigation = useNavigation()
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      setUser(user);
-    });
+      if (user) {
+        navigation.replace("Home")
+      }
+    })
+      
 
     return () => unsubscribe();
   }, []);
@@ -126,7 +131,7 @@ const Login = () => {
     <KeyboardAvoidingView style={styles.container} behavior="padding">
    
 
-   <h1 style={styles.title}> Welcome to Trek-it!</h1>
+   <Text style={styles.title}> Welcome to Trek-it!</Text>
 
       <View style={styles.buttonContainer}>
       {user ? (
@@ -273,6 +278,7 @@ const styles = StyleSheet.create({
   title: {
     color: "#01352C",
     fontWeight: 700,
+    fontSize: 40
 
   }
 });
