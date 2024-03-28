@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, StyleSheet, TextInput, Keyboard } from 'react-native';
-import { Button, SearchBar, Card } from 'react-native-elements';
+import { View, Text, ScrollView, StyleSheet, Image, Dimensions } from 'react-native';
+import { Button, Card } from 'react-native-elements';
 import Header from '../components/Header';
 
 const HomeScreen = () => {
@@ -9,47 +9,54 @@ const HomeScreen = () => {
     function createNewItinerary() {
         // Logic for creating a new itinerary
     }
-    
-    function saveSearchTerm() {
-        console.log(search);
-        // Logic for saving search term
-    }
 
     // Dummy data for featured destinations
     const featuredDestinations = [
-        { id: 1, name: 'Destination 1', details: 'Details about Destination 1' },
-        { id: 2, name: 'Destination 2', details: 'Details about Destination 2' },
-        { id: 3, name: 'Destination 3', details: 'Details about Destination 3' },
+        { id: 1, name: 'Japan', details: 'Japan holidays offer up gold-capped temples, some of the world’s most modern cities and an ample supply of cherry blossom trees.', image: require('../images/japan.jpeg') },
+        { id: 2, name: 'Italy', details: 'Feast your eyes on Italy, ancient ruins, gorgeous beaches, glistening Italian lakes & fantastic food, Italy is the perfect destination for your next holiday', image: require('../images/italy.jpg') },
+        { id: 3, name: 'Cuba', details: 'Holidays to Cuba are adventurous unlike anywhere else. Classic 1950s American cars, pin-drop-peaceful beaches and friendly-beyond-belief locals are just a few of the things that make the country’s back-to-basics charm so special.', image: require('../images/cuba.jpeg') },
+        { id: 4, name: 'Tanzania', details: 'Holidays to Tanzania are scenery-blessed. Stare up at Africa’s highest mountain, stalk wildlife through sweeping plains or dive down to shipwrecks on the island of Zanzibar.', image: require('../images/tanzania.jpeg') },
+        { id: 5, name: 'Turkey', details: 'From spice-laden bazaars and ancient temples to chic boutiques and bar-backed beaches, holidays to Turkey showcase the best of East and West.', image: require('../images/turkey.jpeg') },
     ];
 
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container} vertical showsVerticalScrollIndicator={true}>
             {/* Custom Header */}
             <Header title="Logo/Name" avatar="path_to_user_avatar" />
-            
-            {/* Search Bar */}
-            <SearchBar
-                placeholder="Enter Destination..."
-                onChangeText={setSearch}
-                value={search}
-                containerStyle={styles.searchContainer}
-                inputContainerStyle={styles.searchInputContainer}
-                inputStyle={styles.searchInput}
-                onSubmitEditing={Keyboard.dismiss}
-            />
-
-            {/* Featured Destinations/Deals */}
-            <Text style={styles.sectionTitle}>Featured Destinations/Deals</Text>
+            <Text style={styles.sectionTitle}>Our Top Picks</Text>
+            {/* Featured Destinations */}
             <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.cardContainer}>
-                {/* Destination Cards */}
                 {featuredDestinations.map(destination => (
-                <Card key={destination.id}>
-                    <View style={styles.cardContent}>
-                        <Text style={styles.cardTitle}>{destination.name}</Text>
-                        <Text style={styles.cardDetails}>{destination.details}</Text>
-                    </View>
-                </Card>
-            ))}
+                    <Card key={destination.id} containerStyle={styles.card}>
+                        <Image source={destination.image} style={styles.cardImage} />
+                        <View style={styles.cardContent}>
+                            <Text style={styles.cardTitle}>{destination.name}</Text>
+                            <Text style={styles.cardDetails}>{destination.details}</Text>
+                            <View style={styles.buttonContainer}>
+                                <Button
+                                    title="Places/Cities"
+                                    buttonStyle={styles.button}
+                                    onPress={() => console.log('Cities button pressed for ' + destination.name)}
+                                />
+                                <Button
+                                    title="Attractions"
+                                    buttonStyle={styles.button}
+                                    onPress={() => console.log('Attractions button pressed for ' + destination.name)}
+                                />
+                                <Button
+                                    title="Restaurants"
+                                    buttonStyle={styles.button}
+                                    onPress={() => console.log('Restaurants button pressed for ' + destination.name)}
+                                />
+                                <Button
+                                    title="Landmarks"
+                                    buttonStyle={styles.button}
+                                    onPress={() => console.log('Landmarks button pressed for ' + destination.name)}
+                                />
+                            </View>
+                        </View>
+                    </Card>
+                ))}
             </ScrollView>
 
             {/* Create New Itinerary Button */}
@@ -61,28 +68,14 @@ const HomeScreen = () => {
                     titleStyle={styles.buttonText}
                 />
             </View>
-        </View>
+        </ScrollView>
     );
 };
 
-// Styles
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
-        backgroundColor:'#F4E5C2',
-       
-    },
-    searchContainer: {
-        backgroundColor: 'white',
-        marginTop: 10,
-        marginBottom: 10,
-    },
-    searchInputContainer: {
-        backgroundColor: 'white',
-    },
-    searchInput: {
-        color: '#272343',
-        fontFamily: 'Poppins',
+        backgroundColor: '#F4E5C2',
     },
     sectionTitle: {
         fontSize: 25,
@@ -95,44 +88,56 @@ const styles = StyleSheet.create({
     },
     cardContainer: {
         marginBottom: 30,
+        maxHeight: Dimensions.get('window').height * 0.9, // Maximum height of the card container
+    },
+    card: {
+        borderRadius: 10,
+        overflow: 'hidden', // Ensure the image doesn't overflow the card
+        marginHorizontal: 10,
+        width: Dimensions.get('window').width * 0.9, // Adjusted card width to fit the screen width
+        marginVertical: 10,
         
+    },
+    cardImage: {
+        width: '100%',
+        height: 200, // Adjusted height for the image
+        resizeMode: 'cover',
     },
     cardContent: {
         padding: 10,
+        
     },
     cardTitle: {
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: 'bold',
         marginBottom: 5,
         color: '#272343',
         fontFamily: 'Poppins',
+        textAlign: 'center',
+        marginBottom:15,
     },
     cardDetails: {
         fontSize: 14,
+        marginBottom: 10,
         color: '#272343',
         fontFamily: 'Poppins',
     },
     buttonContainer: {
-        alignItems: 'center',
-        marginTop: 'auto',
-        marginBottom: 30,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        marginTop: 10, 
     },
     button: {
-        width: '100%',
-        backgroundColor: '#556C2F',
-        borderColor: '#556C2F',
-        borderWidth: 2,
+        backgroundColor: '#C49F5A',
         borderRadius: 10,
-        paddingTop:30,
-        paddingBottom:30,
-        paddingHorizontal:30,
+        marginHorizontal: 5,
+        marginBottom:15,
     },
     buttonText: {
-        fontSize: 25,
+        fontSize: 16,
         fontFamily: 'Poppins',
-        color: '#ffff',
-        fontWeight:'800',
-        alignItems:'center'
+        fontWeight: '800',
+        textAlign: 'center',
     },
 });
 
