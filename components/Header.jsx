@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
+
 const Header = ({ title, avatar }) => {
   return (
     <View style={styles.header}>
@@ -15,14 +16,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 20,
+    padding: 5, 
     borderBottomWidth: 1,
-    borderBottomColor: 'red',
-    backgroundColor: 'yellow'
+    borderBottomColor: '#556C2F', 
+    backgroundColor: '#556C2F', 
+    width: '100%',
   },
   logo: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 24, 
+    fontWeight: '900', 
+    fontFamily: 'Poppins',
+    color: '#ffff',
   },
   avatar: {
     width: 40,

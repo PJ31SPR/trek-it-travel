@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TextInput, Keyboard } from 'react-native';
 import { Button, SearchBar, Card } from 'react-native-elements';
 import Header from '../components/Header';
 
@@ -29,17 +29,13 @@ const HomeScreen = () => {
             
             {/* Search Bar */}
             <SearchBar
-                placeholder="Type Here..."
+                placeholder="Enter Destination..."
                 onChangeText={setSearch}
                 value={search}
-            />
-
-            {/* Search Button */}
-            <Button
-                onPress={saveSearchTerm}
-                title="Search"
-                color="#841584"
-                accessibilityLabel="Search for this destination"
+                containerStyle={styles.searchContainer}
+                inputContainerStyle={styles.searchInputContainer}
+                inputStyle={styles.searchInput}
+                onSubmitEditing={Keyboard.dismiss}
             />
 
             {/* Featured Destinations/Deals */}
@@ -51,25 +47,56 @@ const HomeScreen = () => {
                     <View style={styles.cardContent}>
                         <Text style={styles.cardTitle}>{destination.name}</Text>
                         <Text style={styles.cardDetails}>{destination.details}</Text>
-                        
                     </View>
                 </Card>
             ))}
             </ScrollView>
 
             {/* Create New Itinerary Button */}
-            <Button
-                onPress={createNewItinerary}
-                title="Create New Itinerary"
-                color="#841584"
-                accessibilityLabel="Create new trip itinerary"
-            />
+            <View style={styles.buttonContainer}>
+                <Button
+                    onPress={createNewItinerary}
+                    title="Create New Itinerary"
+                    buttonStyle={styles.button}
+                    titleStyle={styles.buttonText}
+                />
+            </View>
         </View>
     );
 };
 
 // Styles
 const styles = StyleSheet.create({
+    container:{
+        flex: 1,
+        backgroundColor:'#F4E5C2',
+       
+    },
+    searchContainer: {
+        backgroundColor: 'white',
+        marginTop: 10,
+        marginBottom: 10,
+    },
+    searchInputContainer: {
+        backgroundColor: 'white',
+    },
+    searchInput: {
+        color: '#272343',
+        fontFamily: 'Poppins',
+    },
+    sectionTitle: {
+        fontSize: 25,
+        fontWeight: 'bold',
+        marginTop: 20,
+        marginBottom: 10,
+        color: '#272343',
+        fontFamily: 'Poppins',
+        textAlign:'center'
+    },
+    cardContainer: {
+        marginBottom: 30,
+        
+    },
     cardContent: {
         padding: 10,
     },
@@ -77,9 +104,35 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         marginBottom: 5,
+        color: '#272343',
+        fontFamily: 'Poppins',
     },
     cardDetails: {
         fontSize: 14,
+        color: '#272343',
+        fontFamily: 'Poppins',
+    },
+    buttonContainer: {
+        alignItems: 'center',
+        marginTop: 'auto',
+        marginBottom: 30,
+    },
+    button: {
+        width: '100%',
+        backgroundColor: '#556C2F',
+        borderColor: '#556C2F',
+        borderWidth: 2,
+        borderRadius: 10,
+        paddingTop:30,
+        paddingBottom:30,
+        paddingHorizontal:30,
+    },
+    buttonText: {
+        fontSize: 25,
+        fontFamily: 'Poppins',
+        color: '#ffff',
+        fontWeight:'800',
+        alignItems:'center'
     },
 });
 

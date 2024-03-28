@@ -1,15 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginScreen from '../screens/LoginScreen'
+import { MaterialCommunityIcons } from '@expo/vector-icons'; // Import icons
+import LoginScreen from '../screens/LoginScreen';
 import HomeScreen from '../screens/HomeScreen';
-import ProfileScreen from '../screens/ProfileScreen'
-import Header from '../components/Header'
+import ProfileScreen from '../screens/ProfileScreen';
+import Header from '../components/Header';
 import DestinationScreen from '../screens/DestinationScreen';
-
+import { useFonts, Poppins_400Regular } from '@expo-google-fonts/poppins';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../firebase';
 
@@ -18,43 +19,56 @@ const Tab = createBottomTabNavigator();
 
 const MainTabNavigator = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ color, size }) => {
+          let iconName;
+
+          if (route.name === 'Home') {
+            iconName = 'home';
+          } else if (route.name === 'Destinations') {
+            iconName = 'map';
+          } else if (route.name === 'Profile') {
+            iconName = 'account';
+          }
+
+          // Return the icon component with custom color
+          return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
+        },
+      })}
+      tabBarOptions={{
+        activeTintColor: '#556C2F', // Change the color of active tab icons
+        inactiveTintColor: 'gray', // Change the color of inactive tab icons
+      }}
+    >
       <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
       <Tab.Screen name="Destinations" component={DestinationScreen} options={{ headerShown: false }} />
       <Tab.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
-
-     
     </Tab.Navigator>
   );
 };
 
-export default function App() {
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // Manage authentication state
+export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const [fontsLoaded] = useFonts({
+    Poppins: Poppins_400Regular,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   const handleLogin = async (email, password, setIsAuthenticated, setError) => {
     try {
-      // Authenticate the user with email and password
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      
-      // If authentication is successful, set isAuthenticated to true
       setIsAuthenticated(true);
-  
-      // Optionally, you can perform additional actions here after successful login, such as fetching user data
-      // For example, you can fetch user data from Firebase Firestore
-      // const userData = await db.collection('users').doc(userCredential.user.uid).get();
-      // Then, you can set the user data to the state or perform any other actions based on your application's logic
-  
-      // Clear any previous error message
       setError('');
     } catch (error) {
-      // If there's an error during login, set the error message
       setError('Error signing in: ' + error.message);
     }
   };
-
-
-
 
   return (
     <NavigationContainer independent={true}>
@@ -67,14 +81,12 @@ export default function App() {
     </NavigationContainer>
   );
 };
- 
-
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#F4E5C2'
   },
 });

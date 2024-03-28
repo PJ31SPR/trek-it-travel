@@ -7,16 +7,16 @@ import {
   TextInput,
   View,
   Pressable,
+  Image
 } from "react-native";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithRedirect,
   signOut,
 } from "firebase/auth";
 import { auth, db } from "../firebase";
 import { doc, setDoc } from 'firebase/firestore'
+
 
 
 const Login = () => {
@@ -73,10 +73,7 @@ const Login = () => {
          setUsername("");
          setError("");
        }
-     //   setTimeout(() => {
-     //     setSuccessMessage("");
-     //   }, 3000);
-     // }
+
      catch(error) {
        setError("Error signing up or adding document: " + error.message);
      };
@@ -105,16 +102,7 @@ const Login = () => {
       });
   };
 
-  // const handleGoogleSignIn = () => {
-  //   const provider = new GoogleAuthProvider();
-  //   signInWithRedirect(auth, provider)
-  //     .then((result) => {
-  //       console.log("User signed in with Google:", result.user);
-  //     })
-  //     .catch((error) => {
-  //       setError("Error signing in with Google: " + error.message);
-  //     });
-  // };
+
 
   const handleSignOut = () => {
     signOut(auth)
@@ -130,8 +118,7 @@ const Login = () => {
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
    
-
-   <Text style={styles.title}> Welcome to Trek-it!</Text>
+   <Image source={require('../logo.png')} style={styles.logo} />
 
       <View style={styles.buttonContainer}>
       {user ? (
@@ -169,14 +156,6 @@ const Login = () => {
                 secureTextEntry
               />
 
-              <TextInput
-                placeholder="Confirm Password"
-                value={confirmPassword}
-                onChangeText={(text) => setConfirmPassword(text)}
-                style={styles.input}
-                secureTextEntry
-              />
-
             </View>
 
             <Pressable onPress={handleAuth} style={styles.button}>
@@ -194,12 +173,7 @@ const Login = () => {
               </Text>
             </Pressable>
 
-            {/* <Pressable
-              onPress={handleGoogleSignIn}
-              style={[styles.button, styles.googleButton]}
-            >
-              <Text style={styles.buttonText}>Sign in with Google</Text>
-            </Pressable> */}
+        
           </>
         )}
       </View>
@@ -215,72 +189,63 @@ const Login = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: '#F4E5C2',
-    
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F9F6EC'
   },
   inputContainer: {
-    width: "80%",
-    marginBottom: 20,
+    width: '100%',
+    marginBottom:20,
+    marginTop: 0
   },
   input: {
-    backgroundColor: "white",
+    backgroundColor: 'white',
     paddingHorizontal: 15,
     paddingVertical: 10,
     borderRadius: 10,
     marginTop: 5,
+    borderColor: '#556C2F', // Set border color for input
+    borderWidth: 2, // Set border width for input
+    
   },
   buttonContainer: {
-    width: "60%",
-    justifyContent: "center",
-    alignItems: "center",
+    width: '60%',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: 40,
   },
   button: {
-    backgroundColor: "#BAD8B6",
-    width: "100%",
+    backgroundColor: '#C49F5A',
+    width: '100%',
     padding: 15,
     borderRadius: 10,
-    marginBottom: 10,
-  },
-  buttonOutline: {
-    backgroundColor: "white",
-    borderColor: "#BAD8B6",
-    borderWidth: 2,
+    alignItems: 'center',
+    marginBottom: 10, // Adjust spacing between buttons
+    borderColor: '#C49F5A', // Border color for login button
+    borderWidth: 2, // Border width for login button
   },
   buttonText: {
-    color: "#272343",
-    fontWeight: "700",
-    fontSize: 16,
-    textAlign: "center",
+    color: 'white',
+    fontWeight: '700',
+    fontSize: 17,
+    fontFamily: 'Poppins', // Set font family to Poppins
+    
+  },
+  buttonOutline: {
+    backgroundColor: '#556C2F', // Background color for register button
+    borderColor: '#556C2F', // Border color for register button
   },
   buttonOutlineText: {
-    color: "#01352C",
-    fontWeight: "700",
-    fontSize: 16,
-    textAlign: "center",
+    color: 'white',
+    fontWeight: '700',
+    fontSize: 17,
+    fontFamily: 'Poppins', // Set font family to Poppins
   },
-  errorText: {
-    color: "red",
-    marginTop: 10,
-    textAlign: "center",
+  logo: {
+    width: 400,
+    height: 150,
+    marginBottom: 15,
   },
-  successText: {
-    color: "green",
-    marginTop: 10,
-    textAlign: "center",
-  },
-  googleButton: {
-    marginTop: 50,
-    backgroundColor: "#BAD8B6",
-  },
-  title: {
-    color: "#01352C",
-    fontWeight: 700,
-    fontSize: 40
-
-  }
 });
 
 export default Login;
