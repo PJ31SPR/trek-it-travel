@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, Dimensions } from 'react-native';
 import { Button, Card } from 'react-native-elements';
 import Header from '../components/Header';
+import { useNavigation } from '@react-navigation/native'; 
+
 
 const HomeScreen = () => {
     const [search, setSearch] = useState('');
+    const navigation = useNavigation();
 
-    function createNewItinerary() {
-        // Logic for creating a new itinerary
-    }
 
     // Dummy data for featured destinations
     const featuredDestinations = [
@@ -33,11 +33,11 @@ const HomeScreen = () => {
                             <Text style={styles.cardTitle}>{destination.name}</Text>
                             <Text style={styles.cardDetails}>{destination.details}</Text>
                             <View style={styles.buttonContainer}>
-                                <Button
+                                {/* <Button
                                     title="Places/Cities"
                                     buttonStyle={styles.button}
                                     onPress={() => console.log('Cities button pressed for ' + destination.name)}
-                                />
+                                /> */}
                                 <Button
                                     title="Attractions"
                                     buttonStyle={styles.button}
@@ -59,18 +59,10 @@ const HomeScreen = () => {
                 ))}
             </ScrollView>
 
-            {/* Create New Itinerary Button */}
-            <View style={styles.buttonContainer}>
-                <Button
-                    onPress={createNewItinerary}
-                    title="Create New Itinerary"
-                    buttonStyle={styles.button}
-                    titleStyle={styles.buttonText}
-                />
-            </View>
+         
         </ScrollView>
     );
-};
+}
 
 const styles = StyleSheet.create({
     container: {

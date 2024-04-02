@@ -1,24 +1,22 @@
-import React, { useState }from 'react';
+import React, { useState } from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { SearchBar, Card, Button } from 'react-native-elements';
+import { SearchBar, Card, Button, Icon } from 'react-native-elements';
+import { useNavigation } from '@react-navigation/native';
 import Header from '../components/Header';
 
 const DestinationScreen = () => {
     const [search, setSearch] = useState('');
+    const navigation = useNavigation();
 
-    function saveSearchTerm() {
-        console.log(search);
-        // Logic for saving search term
-    }
 
     // Dummy data for featured destinations
     const featuredDestinations = [
-        { id: 1, name: 'Indonesia', image: require('../images/bali.jpg'), currency: 'Indonesian Rupiah' },
-        { id: 2, name: 'Thailand', image: require('../images/thailand.jpeg'), currency: 'Thai Baht' },
-        { id: 3, name: 'New Zealand', image: require('../images/new-zealand.jpeg'), currency: 'New Zealand Dollar' },
-        { id: 4, name: 'Mexico', image: require('../images/mexico.jpeg'), currency: 'Mexican Peso' },
-        { id: 5, name: 'United Arab Emirates', image: require('../images/uae.jpeg'), currency: 'United Arab Emirates Dirham' },
-        { id: 6, name: 'Switzerland', image: require('../images/switzerland.jpeg'), currency: 'Swiss Franc' },
+        { id: 1, name: 'Bali', image: require('../images/bali.jpg'), currency: 'Indonesian Rupiah' },
+        { id: 2, name: 'Phuket', image: require('../images/thailand.jpeg'), currency: 'Thai Baht' },
+        { id: 3, name: 'Auckland', image: require('../images/new-zealand.jpeg'), currency: 'New Zealand Dollar' },
+        { id: 4, name: 'Mexico City', image: require('../images/mexico.jpeg'), currency: 'Mexican Peso' },
+        { id: 5, name: 'Dubai', image: require('../images/uae.jpeg'), currency: 'United Arab Emirates Dirham' },
+        { id: 6, name: 'Zürich', image: require('../images/switzerland.jpeg'), currency: 'Swiss Franc' },
     ];
 
     return (
@@ -41,14 +39,24 @@ const DestinationScreen = () => {
                     <Card key={destination.id} containerStyle={styles.card}>
                         <Image source={destination.image} style={styles.cardImage} />
                         <View style={styles.cardContent}>
-                            <Text style={styles.cardTitle}>{destination.name}</Text>
+                            <View style={styles.destinationHeader}>
+                                <Text style={styles.cardTitle}>{destination.name}</Text>
+                                {/* Create Itinerary Button */}
+                                <TouchableOpacity
+                                style={styles.createItineraryButton}
+                                onPress={() => navigation.navigate('CreateItinerary', { city: destination.name, image: destination.image })}
+                            >
+                                <Icon
+                                    name='calendar-plus'
+                                    type='material-community'
+                                    color='#C49F5A'
+                                    size={24}
+                                />
+                                 </TouchableOpacity>
+
+                            </View>
                             <Text style={styles.cardCurrency}>Currency: {destination.currency}</Text>
                             <View style={styles.buttonContainer}>
-                            <Button
-                                    title="Places/Cities"
-                                    buttonStyle={styles.button}
-                                    onPress={() => console.log('Cities button pressed for ' + destination.name)}
-                                />
                                 <Button
                                     title="Attractions"
                                     buttonStyle={styles.button}
@@ -107,10 +115,15 @@ const styles = StyleSheet.create({
     cardContent: {
         padding: 10,
     },
+    destinationHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 5,
+    },
     cardTitle: {
         fontSize: 18,
         fontWeight: 'bold',
-        marginBottom: 5,
         color: '#272343',
         fontFamily: 'Poppins',
     },
@@ -129,9 +142,11 @@ const styles = StyleSheet.create({
         marginHorizontal: 5,
         backgroundColor: '#C49F5A',
         borderRadius: 10,
-        marginTop:10,
+        marginTop: 10,
+    },
+    createItineraryButton: {
+        padding: 5,
     },
 });
-
 
 export default DestinationScreen;

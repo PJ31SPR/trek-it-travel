@@ -10,9 +10,11 @@ import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import Header from '../components/Header';
 import DestinationScreen from '../screens/DestinationScreen';
+import ItineraryScreen from '../screens/ItineraryScreen'
 import { useFonts, Poppins_400Regular } from '@expo-google-fonts/poppins';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../firebase';
+import CreateItinerary from '../screens/CreateItinerary'
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -30,6 +32,8 @@ const MainTabNavigator = () => {
             iconName = 'map';
           } else if (route.name === 'Profile') {
             iconName = 'account';
+          } else if (route.name === 'Itinerary') {
+            iconName = 'calendar';
           }
 
           // Return the icon component with custom color
@@ -43,6 +47,7 @@ const MainTabNavigator = () => {
     >
       <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
       <Tab.Screen name="Destinations" component={DestinationScreen} options={{ headerShown: false }} />
+      <Tab.Screen name="Itinerary" component={ItineraryScreen} options={{ headerShown: false }} />
       <Tab.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
     </Tab.Navigator>
   );
@@ -75,8 +80,10 @@ export default function App() {
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={MainTabNavigator} options={{ headerShown: false }} />
+        <Stack.Screen name="Itinerary" component={MainTabNavigator} options={{ headerShown: false }} />
         <Stack.Screen name="Profile" component={MainTabNavigator} options={{ headerShown: false }} />
         <Stack.Screen name="Header" component={Header} options={{ headerShown: false }} />
+        <Stack.Screen name="CreateItinerary" component={CreateItinerary} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

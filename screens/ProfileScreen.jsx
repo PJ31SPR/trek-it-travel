@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import { auth } from '../firebase';
@@ -9,6 +9,25 @@ import Header from '../components/Header';
 const Profile = () => {
     const navigation = useNavigation();
     const [avatar, setAvatar] = useState(null);
+    const [userEmail, setUserEmail] = useState('');
+    const [userName, setUserName] = useState('');
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged(user => {
+            if (user) {
+                // User is signed in
+                setUserEmail(user.email); // Set user's email
+                setUserName(user.displayName); // Set user's display name
+            } else {
+                // User is signed out
+                setUserEmail('');
+                setUserName('');
+            }
+        });
+
+        return unsubscribe;
+    }, []);
+
 
     const pickImage = async () => {
         const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
@@ -63,8 +82,8 @@ const Profile = () => {
 
                 {/* User Details */}
                 <View style={styles.detailsContainer}>
-                    <Text style={styles.label}>Name: User Name</Text>
-                    <Text style={styles.label}>Email: user@example.com</Text>
+                    <Text style={styles.label}>Name: {userName}</Text>
+                    <Text style={styles.label}>Email: {userEmail}</Text>
                 </View>
 
                 {/* Buttons for Saved Trips, Bookmarks, Feedback */}

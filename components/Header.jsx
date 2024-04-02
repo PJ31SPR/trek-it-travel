@@ -6,7 +6,7 @@ const Header = ({ title, avatar }) => {
   return (
     <View style={styles.header}>
       <Text style={styles.logo}>Trek-it!</Text>
-      {avatar && <Image source={{ uri: avatar }} style={styles.avatar} />}
+      {/* {avatar && <Image source={{ uri: avatar }} style={styles.avatar} />} */}
     </View>
   );
 };
@@ -14,7 +14,7 @@ const Header = ({ title, avatar }) => {
 const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
     padding: 5, 
     borderBottomWidth: 1,

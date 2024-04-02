@@ -56,6 +56,12 @@ const Login = () => {
   };
 
   const handleSignUp   = async () => {
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match, please try again");
+      return;
+    }
+
     try{
         const userCredential = await createUserWithEmailAndPassword(auth, email, password)
         // console.log(userCredential.user.uid, 'here')
@@ -83,19 +89,13 @@ const Login = () => {
 
   const handleSignIn = () => {
 
-    if (password !== confirmPassword) {
-      setError("Passwords do not match, please try again");
-      return;
-    }
-
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         setEmail("");
         setPassword("");
-        setConfirmPassword("");
         setError("");
         setUsername("")
-        console.log(result.user, 'res.user')
+        // console.log(result.user, 'res.user')
       })
       .catch((error) => {
         setError("Error signing in: " + error.message);
@@ -155,6 +155,16 @@ const Login = () => {
                 style={styles.input}
                 secureTextEntry
               />
+
+              {!isSignIn && (
+                <TextInput
+                  placeholder="Confirm Password"
+                  value={confirmPassword}
+                  onChangeText={(text) => setConfirmPassword(text)}
+                  style={styles.input}
+                  secureTextEntry
+                />
+              )}
 
             </View>
 
