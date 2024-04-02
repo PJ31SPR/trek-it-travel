@@ -59,7 +59,7 @@ const Profile = () => {
 
     return (
         <View style={styles.container}>
-            <Header title="Logo/Name" avatar="path_to_user_avatar" />
+            <Header title="Logo/Name" />
             
             {/* Content */}
             <View style={styles.contentContainer}>

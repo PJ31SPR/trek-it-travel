@@ -21,7 +21,7 @@ const DestinationScreen = () => {
 
     return (
         <View style={styles.container}>
-            <Header title="Logo/Name" avatar="path_to_user_avatar" />
+            <Header title="Logo/Name" />
 
             {/* Search Bar */}
             <SearchBar

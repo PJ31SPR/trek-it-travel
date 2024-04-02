@@ -18,7 +18,7 @@ const ItineraryScreen = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <Header title="Logo/Name" avatar="path_to_user_avatar" />
+            <Header title="Logo/Name"/>
 
             <ScrollView style={styles.scrollView}>
                 {sampleItineraries.map(itinerary => (
