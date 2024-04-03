@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, ScrollView, Dimensions, Image, TouchableOpacity, Modal } from 'react-native';
 import { Icon } from 'react-native-elements';
 import CalendarPicker from 'react-native-calendar-picker';
@@ -6,8 +6,7 @@ import { format } from 'date-fns';
 import Header from '../components/Header';
 import { useNavigation } from '@react-navigation/native';
 import { addItinerary } from '../db.api.jsx'
-import { auth, db} from '../firebase';
-
+import { auth, db } from '../firebase';
 
 const ItineraryCreateScreen = ({ route }) => {
   const { city, image } = route.params; // Retrieve city and image from route params
@@ -18,7 +17,8 @@ const ItineraryCreateScreen = ({ route }) => {
   const [endDate, setEndDate] = useState(null);
   const [isDatePickerVisible, setDatePickerVisible] = useState(false);
   const [itinerary, setItinerary] = useState([]); // State variable to store the itinerary
-  const [userId, setUserId] = useState('')
+  const [userId, setUserId] = useState('');
+  const [messages, setMessages] = useState({}); // State variable to store messages for each category
 
   // State variable for modal visibility
   const [isModalVisible, setModalVisible] = useState(false);
@@ -37,11 +37,13 @@ const ItineraryCreateScreen = ({ route }) => {
       setUserId(user.uid);
       return unsubscribe;
     })
-  }, []);
+  }, [auth]);
 
   const handleSave = () => {
     console.log('Itinerary saved:', { name, startDate, endDate, itinerary });
-    addItinerary(userId, name, city, startDate, endDate )
+    addItinerary(userId, name, city, startDate, endDate)
+      .then(() => showMessage('Itinerary saved successfully!', 'general'))
+      .catch(error => showMessage(`Error: ${error}`, 'general'));
   };
 
   // Function to toggle modal visibility
@@ -56,21 +58,32 @@ const ItineraryCreateScreen = ({ route }) => {
     setEndDate(null); // Reset the selected end date
   };
 
+  const showMessage = (text, category) => {
+    setMessages({ ...messages, [category]: text });
+    setTimeout(() => {
+      setMessages({ ...messages, [category]: '' });
+    }, 2000); // Hide the message after 3 seconds
+  };
+
   // Function to add a card to the itinerary
-  const addToItinerary = (item) => {
+  const addToItinerary = (item, category) => {
     console.log('Item:', item); // Log the item object
+    // Check if the item is already added
     if (!itinerary.find(card => card.id === item.id)) {
-      setItinerary([...itinerary, item]);
+      setItinerary([...itinerary, item]); // Add item to itinerary
       console.log('Added to itinerary:', item.name);
+      showMessage('Added to itinerary: ' + item.name, category); // Show message
+    } else {
+      showMessage('Item already added to itinerary', category); // Show message if item is already added
     }
   };
-  
 
   // Function to remove a card from the itinerary
-  const removeFromItinerary = (item) => {
+  const removeFromItinerary = (item, category) => {
     const updatedItinerary = itinerary.filter(card => card.id !== item.id);
     setItinerary(updatedItinerary);
     console.log('Removed from itinerary:', item.name);
+    showMessage('Removed from itinerary: ' + item.name, category); // Show message
   };
 
   // Dummy data for attractions, restaurants, and landmarks
@@ -105,12 +118,12 @@ const ItineraryCreateScreen = ({ route }) => {
       </TouchableOpacity>
 
       <ScrollView style={styles.container} vertical showsVerticalScrollIndicator={true}>
-        
+
         <View style={styles.containerItinerary}>
           <Text style={styles.title}>Create Itinerary for {city}</Text>
           <View style={styles.cardContainer}>
             <View style={styles.imageContainer}>
-              <Image source={image} style={styles.cityImage} /> {/* Display city image */}
+              <Image source={image} style={styles.cityImage} />
             </View>
             <View style={styles.formContainer}>
               <TextInput
@@ -120,11 +133,11 @@ const ItineraryCreateScreen = ({ route }) => {
                 placeholder="Enter itinerary name"
               />
 
-              <View style={{ marginVertical: 5 }} /> {/* Add space */}
+              <View style={{ marginVertical: 5 }} /> 
               {/* Button container for Select Dates and Save */}
               <View style={styles.buttonContainer}>
                 <Button title="Select Dates" onPress={toggleModal} color='#556C2F' />
-                <View style={{ marginVertical: 10 }} /> {/* Added spacing */}
+                <View style={{ marginVertical: 10 }} /> 
                 <Button title="Save" onPress={handleSave} color='#C49F5A' />
               </View>
               {(startDate || endDate) && (
@@ -183,16 +196,18 @@ const ItineraryCreateScreen = ({ route }) => {
           {/* Attractions container */}
           <View style={[styles.categoryContainer, styles.attractionsContainer]}>
             <Text style={styles.categoryTitle}>Attractions</Text>
+            <Text style={styles.messageText}>{messages['attractions']}</Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               {attractions.map(attraction => (
                 <View key={attraction.id} style={styles.card}>
                   <View style={styles.cardImageContainer}>
                     <Image source={image} style={styles.cardImage} />
+
                     <View style={styles.attractionButtonContainer}>
-                      <TouchableOpacity onPress={() => addToItinerary(attraction)}>
+                      <TouchableOpacity onPress={() => addToItinerary(attraction, 'attractions')}>
                         <Icon name="add-circle" type="ionicon" color="#556C2F" size={30} />
                       </TouchableOpacity>
-                      <TouchableOpacity onPress={() => removeFromItinerary(attraction)}>
+                      <TouchableOpacity onPress={() => removeFromItinerary(attraction, 'attractions')}>
                         <Icon name="remove-circle" type="ionicon" color="#C49F5A" size={30} />
                       </TouchableOpacity>
                     </View>
@@ -208,16 +223,17 @@ const ItineraryCreateScreen = ({ route }) => {
           {/* Restaurants container */}
           <View style={[styles.categoryContainer, styles.restaurantsContainer]}>
             <Text style={styles.categoryTitle}>Restaurants</Text>
+            <Text style={styles.messageText}>{messages['restaurants']}</Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               {restaurants.map(restaurant => (
                 <View key={restaurant.id} style={styles.card}>
                   <View style={styles.cardImageContainer}>
                     <Image source={image} style={styles.cardImage} />
                     <View style={styles.restaurantButtonContainer}>
-                      <TouchableOpacity onPress={() => addToItinerary(restaurant)}>
+                      <TouchableOpacity onPress={() => addToItinerary(restaurant, 'restaurants')}>
                         <Icon name="add-circle" type="ionicon" color="#556C2F" size={30} />
                       </TouchableOpacity>
-                      <TouchableOpacity onPress={() => removeFromItinerary(restaurant)}>
+                      <TouchableOpacity onPress={() => removeFromItinerary(restaurant, 'restaurants')}>
                         <Icon name="remove-circle" type="ionicon" color="#C49F5A" size={30} />
                       </TouchableOpacity>
                     </View>
@@ -233,16 +249,17 @@ const ItineraryCreateScreen = ({ route }) => {
           {/* Landmarks container */}
           <View style={[styles.categoryContainer, styles.landmarksContainer]}>
             <Text style={styles.categoryTitle}>Landmarks</Text>
+            <Text style={styles.messageText}>{messages['landmarks']}</Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               {landmarks.map(landmark => (
                 <View key={landmark.id} style={styles.card}>
                   <View style={styles.cardImageContainer}>
                     <Image source={image} style={styles.cardImage} />
                     <View style={styles.landmarkButtonContainer}>
-                      <TouchableOpacity onPress={() => addToItinerary(landmark)}>
+                      <TouchableOpacity onPress={() => addToItinerary(landmark, 'landmarks')}>
                         <Icon name="add-circle" type="ionicon" color="#556C2F" size={30} />
                       </TouchableOpacity>
-                      <TouchableOpacity onPress={() => removeFromItinerary(landmark)}>
+                      <TouchableOpacity onPress={() => removeFromItinerary(landmark, 'landmarks')}>
                         <Icon name="remove-circle" type="ionicon" color="#C49F5A" size={30} />
                       </TouchableOpacity>
                     </View>
@@ -253,10 +270,13 @@ const ItineraryCreateScreen = ({ route }) => {
               ))}
             </ScrollView>
           </View>
-
-
         </View>
       </ScrollView>
+      
+      {/* Message container */}
+      <View style={styles.messageContainer}>
+        <Text style={styles.messageText}>{messages['general']}</Text>
+      </View>
     </View>
   );
 };
@@ -267,7 +287,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F4E5C2',
     marginBottom: 5,
   },
-  containerItinerary:{
+  containerItinerary: {
     marginTop: 15,
     marginHorizontal: 15,
     borderWidth: 1,
@@ -289,7 +309,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'flex-start', // Align items to the top
     marginTop: 15,
-   
   },
   imageContainer: {
     flex: 1,
@@ -321,12 +340,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 5,
-    
   },
   calendarContainer: {
     marginBottom: 20,
     alignItems: 'center',
-    
   },
   goBackButton: {
     flexDirection: 'row',
@@ -346,115 +363,109 @@ const styles = StyleSheet.create({
     flexDirection: 'column', // Change to column layout
     width: '80%', // Adjust width to fit buttons
     marginBottom: 20, // Add margin at the bottom
-    marginHorizontal:20
+    marginHorizontal: 20
   },
   // Modal styles
   modalContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black background
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   modalContent: {
-    width: '80%',
     backgroundColor: '#fff',
     borderRadius: 10,
     padding: 20,
-    alignItems: 'center',
+    width: '80%',
+    maxHeight: '70%',
   },
   modalHeader: {
-    width: '100%',
     alignItems: 'flex-end',
-    marginBottom: 10
   },
-  getStartedButtonContainer: {
+  // Categories container styles
+  categoriesContainer: {
     flex: 1,
-    alignItems: 'center',
-    marginTop:15,
-  },
-  getStartedButton: {
-    backgroundColor: '#556C2F',
-    paddingVertical: 15,
-    paddingHorizontal: 30,
-    borderRadius: 5,
-    marginTop: 25,
-  },
-  getStartedButtonText: {
-    color: '#FFFFFF',
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  categoriesContainer:{
-    marginTop: 25,
+    paddingHorizontal: 10,
+    paddingBottom: 20,
+    marginBottom: 10,
   },
   categoryContainer: {
     marginBottom: 20,
-    marginHorizontal: 10,
   },
   categoryTitle: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 10,
-    marginLeft: 15,
+    fontFamily: 'Poppins',
+    marginTop:20,
   },
+  // Message container styles
+  messageContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: '#C49F5A',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+  },
+  messageText: {
+    color: '#272343',
+    fontSize: 16,
+    fontFamily: 'Poppins',
+  },
+  // Card styles
   card: {
-    backgroundColor: '#FFFFFF',
+    width: 250,
+    marginRight: 10,
+    backgroundColor: '#fff',
     borderRadius: 10,
     padding: 10,
-    margin: 5,
-    alignItems: 'center',
-    width: 200,
+  },
+  cardImageContainer: {
+    marginBottom: 10,
+    position: 'relative',
   },
   cardImage: {
-    width: 150,
+    width: '100%',
     height: 150,
     borderRadius: 10,
-    marginBottom: 10,
   },
   cardTitle: {
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 5,
+    fontFamily: 'Poppins',
   },
   cardDescription: {
     fontSize: 14,
-    marginBottom: 5,
-    textAlign: 'center',
+    color: '#666',
+    fontFamily: 'Poppins',
   },
-  attractionsContainer: {
-    marginBottom: 20,
-    marginHorizontal: 10,
-  },
-  restaurantsContainer: {
-    marginBottom: 20,
-    marginHorizontal: 10,
-  },
-  landmarksContainer: {
-    marginBottom: 20,
-    marginHorizontal: 10,
-  },
+  // Button container styles within card
   attractionButtonContainer: {
-    flexDirection: 'row', // Arrange buttons horizontally
-    justifyContent: 'space-between', // Add space between buttons
-    width: '100%', // Ensure buttons take up full width
-    paddingHorizontal: 20, // Add horizontal padding
-    marginTop: 10, // Add margin at the top
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    position: 'absolute',
+    top: 5,
+    right: 5,
   },
   restaurantButtonContainer: {
-    flexDirection: 'row', 
-    justifyContent: 'space-between', 
-    width: '100%', 
-    paddingHorizontal: 20, 
-    marginTop: 10, 
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    position: 'absolute',
+    top: 5,
+    right: 5,
   },
   landmarkButtonContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between', 
-    width: '100%', 
-    paddingHorizontal: 20, 
-    marginTop: 10, 
+    justifyContent: 'space-between',
+    position: 'absolute',
+    top: 5,
+    right: 5,
   },
-  
+
 });
 
 export default ItineraryCreateScreen;
