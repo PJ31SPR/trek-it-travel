@@ -1,4 +1,4 @@
-import { getDoc, doc, collection, addDoc } from 'firebase/firestore'
+import { getDoc, getDocs, doc, collection, addDoc } from 'firebase/firestore'
 import { db } from './firebase'
 export const readUserDocument = async (userId) => {
     try {
@@ -27,3 +27,27 @@ export const addItinerary = async (userId, name, city, startDate, endDate) => {
         throw error;
       }
       };
+
+      export const readItineraries = async (userId) => {
+        try {
+            const userDocRef = doc(db, 'users', userId); 
+            const userDocSnapshot = await getDoc(userDocRef); 
+    
+            if (userDocSnapshot.exists()) {
+                const userDocData = userDocSnapshot.data();
+                const itinerariesRef = collection(userDocRef, 'itineraries');
+                const itinerariesSnapshot = await getDocs(itinerariesRef);
+    
+                const itinerariesData = itinerariesSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    
+                console.log('Itineraries Data:', itinerariesData);
+                return itinerariesData;
+            } else {
+                console.log('User document not found');
+                return null; 
+            }
+        } catch (error) {
+            console.error('Error reading user document:', error);
+            throw error;
+        }
+    };
