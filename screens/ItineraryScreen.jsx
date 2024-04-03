@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Card } from 'react-native-elements';
 import Header from '../components/Header';
+import { auth } from "../firebase"
+import { readItineraries } from '../db.api';
 
 // Sample data for itineraries
 const sampleItineraries = [
@@ -11,11 +13,41 @@ const sampleItineraries = [
 ];
 
 const ItineraryScreen = ({ navigation }) => {
+    const [userId, setUserId] = useState('')
+    const [itineraries, setItineraries] = useState({})
  
     const navigateToDetail = (itinerary) => {
         navigation.navigate('ItineraryDetail', { itinerary });
     };
 
+    //userId
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged(user => {
+
+        // User is signed in
+        setUserId(user.uid); 
+        return unsubscribe;
+        })
+    }, []);
+
+    //firestore
+    useEffect(() => {
+        const fetchItineraries = async () => {
+            try {
+                if (userId) {
+                    //read itineraries document from db
+                    const itinerariesDoc = await readItineraries(userId);
+                    await setItineraries(itinerariesDoc);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchItineraries()
+    }, [userId])
+    
+    console.log(itineraries)
+   
     return (
         <View style={styles.container}>
             <Header title="Logo/Name"/>
