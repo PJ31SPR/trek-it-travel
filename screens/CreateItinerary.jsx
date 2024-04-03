@@ -12,6 +12,7 @@ const ItineraryCreateScreen = ({ route }) => {
   const { city, image } = route.params; // Retrieve city and image from route params
   const navigation = useNavigation(); // Use navigation hook
 
+
   const [name, setName] = useState('');
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
