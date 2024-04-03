@@ -11,12 +11,14 @@ const DestinationScreen = () => {
 
     // Dummy data for featured destinations
     const featuredDestinations = [
-        { id: 1, name: 'Bali', image: require('../images/bali.jpg'), currency: 'Indonesian Rupiah' },
+        { id: 1, name: 'Rome', image: require('../images/rome.jpeg'), currency: '' },
         { id: 2, name: 'Phuket', image: require('../images/thailand.jpeg'), currency: 'Thai Baht' },
         { id: 3, name: 'Auckland', image: require('../images/new-zealand.jpeg'), currency: 'New Zealand Dollar' },
         { id: 4, name: 'Mexico City', image: require('../images/mexico.jpeg'), currency: 'Mexican Peso' },
         { id: 5, name: 'Dubai', image: require('../images/uae.jpeg'), currency: 'United Arab Emirates Dirham' },
-        { id: 6, name: 'Zürich', image: require('../images/switzerland.jpeg'), currency: 'Swiss Franc' },
+        { id: 6, name: 'Barcelona', image: require('../images/barcelona.jpeg'), currency: '' },
+        { id: 7, name: 'Zurich', image: require('../images/switzerland.jpeg'), currency: 'Swiss Franc' },
+        { id: 8, name: 'Sydney', image: require('../images/sydney.jpeg'), currency: '' },
     ];
 
     return (
@@ -56,7 +58,7 @@ const DestinationScreen = () => {
 
                             </View>
                             <Text style={styles.cardCurrency}>Currency: {destination.currency}</Text>
-                            <View style={styles.buttonContainer}>
+                            {/* <View style={styles.buttonContainer}>
                                 <Button
                                     title="Attractions"
                                     buttonStyle={styles.button}
@@ -72,7 +74,7 @@ const DestinationScreen = () => {
                                     buttonStyle={styles.button}
                                     onPress={() => console.log('Landmarks button pressed for ' + destination.name)}
                                 />
-                            </View>
+                            </View> */}
                         </View>
                     </Card>
                 ))}

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
-import { auth } from '../firebase';
+import { auth, db, firestore } from '../firebase';
 import * as ImagePicker from 'expo-image-picker';
 import Header from '../components/Header';
+import { readUserDocument  } from '../db.api.jsx'
 
 
 const Profile = () => {
@@ -11,22 +12,49 @@ const Profile = () => {
     const [avatar, setAvatar] = useState(null);
     const [userEmail, setUserEmail] = useState('');
     const [userName, setUserName] = useState('');
-
+    const [userId, setUserId] = useState('')
+    const [userDoc, setUserDoc] = useState({})
+    
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
             if (user) {
                 // User is signed in
                 setUserEmail(user.email); // Set user's email
-                setUserName(user.displayName); // Set user's display name
+                setUserName(''); // Set user's display name
+                setUserId(user.uid)
             } else {
                 // User is signed out
                 setUserEmail('');
                 setUserName('');
             }
         });
-
         return unsubscribe;
     }, []);
+
+    useEffect(() => {
+        const fetchUserDocument = async () => {
+            try {
+                if (userId) {
+                    //read the user document from firestore
+                    const userDoc = await readUserDocument(userId);
+                    //set the userDoc
+                    setUserDoc(userDoc);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchUserDocument();
+    }, [userId]);
+
+    useEffect(() => {
+        if (userDoc.displayName) {
+            // set the display name from the userDoc
+            setUserName(userDoc.displayName);
+            // photoURL available from here
+            // console.log(userDoc.photoURL)
+        }
+    }, [userDoc])
 
 
     const pickImage = async () => {
@@ -97,16 +125,13 @@ const Profile = () => {
                     <Pressable style={[styles.button, styles.buttonPressable]} onPress={() => {}}>
                         <Text style={styles.buttonText}>Bookmarks</Text>
                     </Pressable>
-                    {/* <Pressable style={[styles.button, styles.buttonPressable]} onPress={() => {}}>
-                        <Text style={styles.buttonText}>Settings</Text>
-                    </Pressable> */}
+
+                    {/* Sign Out Button */}
+                    <Pressable onPress={handleSignOut} style={[styles.button, styles.buttonPressable]}>
+                        <Text style={styles.buttonText}>Sign out</Text>
+                    </Pressable>
                 </View>
             </View>
-
-            {/* Sign Out Button */}
-            <TouchableOpacity onPress={handleSignOut} style={styles.signOutButton}>
-                <Text style={styles.buttonText}>Sign out</Text>
-            </TouchableOpacity>
         </View>
     );
 };
@@ -165,7 +190,7 @@ const styles = StyleSheet.create({
         fontWeight:'800',
     },
     buttonsContainer: {
-        marginBottom: 15,
+        marginBottom: 25,
         alignItems: 'center',
         width: '60%',
     },

@@ -39,11 +39,15 @@ const MainTabNavigator = () => {
           // Return the icon component with custom color
           return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
         },
+        tabBarActiveTintColor: '#556C2F', // Change the color of active tab icons
+        tabBarInactiveTintColor: 'gray', // Change the color of inactive tab icons
+        tabBarStyle: [
+          {
+            display: 'flex',
+          },
+          null,
+        ],
       })}
-      tabBarOptions={{
-        activeTintColor: '#556C2F', // Change the color of active tab icons
-        inactiveTintColor: 'gray', // Change the color of inactive tab icons
-      }}
     >
       <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
       <Tab.Screen name="Destinations" component={DestinationScreen} options={{ headerShown: false }} />
