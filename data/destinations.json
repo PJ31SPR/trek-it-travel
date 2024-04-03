@@ -1,0 +1,1121 @@
+{ 
+  "Rome": {
+    "attractions": [
+      {
+        "Name": "Villa Borghese Gardens",
+        "Description": "Escape the hustle and bustle of the city at Villa Borghese Gardens, a sprawling public park featuring manicured gardens, picturesque walking paths, museums, and a lake.",
+        "Photo": "./data/photos/rome/attractions/borghese.png"
+      },
+      {
+        "Name": "Galleria Borghese",
+        "Description": "Immerse yourself in art at Galleria Borghese, a renowned art museum housed in a 17th-century villa, featuring masterpieces by artists such as Bernini, Caravaggio, and Raphael.",
+        "Photo": "./data/photos/rome/attractions/galleria.png"
+      },
+      {
+        "Name": "Piazza di Spagna",
+        "Description": "Experience the charm of Piazza di Spagna, one of Rome's most famous squares, known for its iconic Spanish Steps, Barcaccia Fountain, and luxury shopping boutiques.",
+        "Photo": "./data/photos/rome/attractions/dispagna.png"
+      },
+      {
+        "Name": "Vatican Museums",
+        "Description": "Discover the art and history of the Vatican Museums, home to one of the world's most extensive collections of art, including Michelangelo's Sistine Chapel ceiling.",
+        "Photo": "./data/photos/rome/attractions/vaticanmuseums.png"
+      },
+      {
+        "Name": "Mithraeum of Circus Maximus",
+        "Description": "Explore the underground Mithraeum of Circus Maximus, a hidden gem showcasing the remains of an ancient Roman temple dedicated to the god Mithras.",
+        "Photo": "./data/photos/rome/attractions/mithraeum.png"
+      },
+      {
+        "Name": "Basilica of Saint Lawrence Outside the Walls",
+        "Description": "Visit the Basilica of Saint Lawrence Outside the Walls, one of Rome's seven pilgrimage churches, known for its stunning mosaics, cloister, and papal tombs.",
+        "Photo": "./data/photos/rome/attractions/saintlawrence.png"
+      },
+      {
+        "Name": "Centrale Montemartini",
+        "Description": "Discover the juxtaposition of ancient art and industrial architecture at Centrale Montemartini, a museum housed in a former power plant displaying classical sculptures amidst machinery.",
+        "Photo": "./data/photos/rome/attractions/centralemontemartini.png"
+      },
+      {
+        "Name": "Aventine Keyhole",
+        "Description": "Peer through the Aventine Keyhole for a unique view of St. Peter's Basilica framed perfectly by the garden hedge of the Priory of the Knights of Malta.",
+        "Photo": "./data/photos/rome/attractions/aventinekeyhole.png"
+      }
+    ],
+    "restaurants": [
+      {
+        "Name": "Altrove Ristorante",
+        "Diet Options": ["Vegetarian Friendly", "Vegan Options", "Gluten Free Options"],
+        "Address": "Via Girolamo Benzoni 34, 00154 Rome Italy",
+        "Price Range": "£13 - £43",
+        "Photo": "./data/photos/rome/restaurants/altrove.png"
+      },
+      {
+        "Name": "Santo Palato",
+        "Diet Options": ["N/A"],
+        "Address": "Piazza Tarquinia 4a/b, 00183 Rome Italy",
+        "Price Range": "£17 - £26",
+        "Photo": "./data/photos/rome/restaurants/palato.png"
+      },
+      {
+        "Name": "Trattoria Perilli",
+        "Diet Options": ["N/A"],
+        "Address": "Via Marmorata 39, 00153 Rome Italy",
+        "Price Range": "N/A",
+        "Photo": "./data/photos/rome/restaurants/perilli.png"
+      },
+      {
+        "Name": "Luciano Cucina",
+        "Diet Options": ["N/A"],
+        "Address": "Piazza del Teatro di Pompeo 18, 00186 Rome Italy",
+        "Price Range": "N/A",
+        "Photo": "./data/photos/rome/restaurants/luciano.png"
+      },
+      {
+        "Name": "Da Enzo al 29",
+        "Diet Options": ["N/A"],
+        "Address": "Via dei Vascellari, 29, 00153 Rome Italy",
+        "Price Range": "£15 - £35",
+        "Photo": "./data/photos/rome/restaurants/daenzo.png"
+      },
+      {
+        "Name": "Armando al Pantheon",
+        "Diet Options": ["N/A"],
+        "Address": "Salita dei Crescenzi, 31, 00186 Rome Italy",
+        "Price Range": "£20 - £50",
+        "Photo": "./data/photos/rome/restaurants/armando.png"
+      },
+      {
+        "Name": "Piperno",
+        "Diet Options": ["N/A"],
+        "Address": "Monte dé Cenci 9, 00186 Rome Italy",
+        "Price Range": "£25 - £60",
+        "Photo": "./data/photos/rome/restaurants/piperno.png"
+      },
+      {
+        "Name": "La Gensola",
+        "Diet Options": ["N/A"],
+        "Address": "Piazza della Gensola, 15, 00153 Rome Italy",
+        "Price Range": "£20 - £45",
+        "Photo": "./data/photos/rome/restaurants/gensola.png"
+      }
+  ],
+    "landmarks": [
+      {
+        "Name": "Colosseum",
+        "Photo": "./data/photos/rome/landmarks/colosseum.png",
+        "Description": "The Colosseum, also known as the Flavian Amphitheatre, is an ancient oval amphitheater in the center of Rome. It is the largest ancient amphitheater ever built, and it is considered one of the greatest works of Roman architecture and engineering. The Colosseum was used for gladiatorial contests, public spectacles, animal hunts, executions, and dramas."
+      },
+      {
+        "Name": "Pantheon",
+        "Photo": "./data/photos/rome/landmarks/pantheon.png",
+        "Description": "The Pantheon is a former Roman temple, now a church, in Rome, Italy, on the site of an earlier temple commissioned by Marcus Agrippa during the reign of Augustus. It was completed by the emperor Hadrian and probably dedicated about 126 AD. Its dome is one of the best-preserved of all ancient Roman buildings."
+      },
+      {
+        "Name": "Trevi Fountain",
+        "Photo": "./data/photos/rome/landmarks/trevi.png",
+        "Description": "The Trevi Fountain is a fountain in the Trevi district in Rome, Italy. It is the largest Baroque fountain in Rome and one of the most famous fountains in the world. The fountain has appeared in several films, including Federico Fellini's La Dolce Vita."
+      },
+      {
+        "Name": "Castel Sant’Angelo",
+        "Photo": "./data/photos/rome/landmarks/castel.png",
+        "Description": "The Mausoleum of Hadrian, usually known as Castel Sant'Angelo, is a towering cylindrical building in Parco Adriano, Rome, Italy. It was initially commissioned by the Roman Emperor Hadrian as a mausoleum for himself and his family. The building was later used by the popes as a fortress and castle, and is now a museum."
+      },
+      {
+        "Name": "Roman Forum",
+        "Photo": "./data/photos/rome/landmarks/forum.png",
+        "Description": "The Roman Forum, also known by its Latin name Forum Romanum, is a rectangular forum surrounded by the ruins of several important ancient government buildings at the center of the city of Rome. Citizens of the ancient city referred to this space, originally a marketplace, as the Forum Magnum, or simply the Forum."
+      },
+      {
+        "Name": "Piazza Navona",
+        "Photo": "./data/photos/rome/landmarks/piazza.png",
+        "Description": "Piazza Navona is a public open space in Rome, Italy. It is built on the site of the Stadium of Domitian, built in the 1st century AD, and follows the form of the open space of the stadium. The ancient Romans came there to watch the agones, and hence it was known as 'Circus Agonalis' (competition arena)."
+      },
+      {
+        "Name": "Arch of Constantine",
+        "Photo": "./data/photos/rome/landmarks/arch.png",
+        "Description": "The Arch of Constantine is a triumphal arch in Rome, situated between the Colosseum and the Palatine Hill. It was erected by the Roman Senate to commemorate Constantine I's victory over Maxentius at the Battle of Milvian Bridge in 312 AD."
+      },
+      {
+        "Name": "Baths of Caracalla",
+        "Photo": "./data/photos/rome/landmarks/baths.png",
+        "Description": "The Baths of Caracalla were public baths in ancient Rome, built in the early 3rd century AD. They were the second-largest Roman public baths, or thermae, built in Rome, following the Baths of Diocletian. The baths were open to the public and were used for socializing as well as bathing."
+      }
+    ]
+  },
+  "Barcelona": {
+    "attractions": [
+      {
+        "Name": "Barcelona Zoo",
+        "Description": "Barcelona Zoo is located in Ciutadella Park and houses a wide variety of animals, including mammals, birds, reptiles, and amphibians. It offers educational programs, animal shows, and conservation initiatives.",
+        "Photo": "./data/photos/barcelona/attractions/zoo.png"
+      },
+      {
+        "Name": "Poble Espanyol",
+        "Description": "Poble Espanyol is an open-air architectural museum located on Montjuïc Hill. It features replicas of traditional Spanish buildings from different regions, showcasing the country's cultural diversity and craftsmanship.",
+        "Photo": "./data/photos/barcelona/attractions/poble.png"
+      },
+      {
+        "Name": "Barcelona Aquarium",
+        "Description": "Barcelona Aquarium, located in Port Vell, is one of the largest aquariums in Europe. It houses thousands of marine species from around the world, including sharks, rays, jellyfish, and colorful fish.",
+        "Photo": "./data/photos/barcelona/attractions/aquarium.png"
+      },
+      {
+        "Name": "Tibidabo Amusement Park",
+        "Description": "Tibidabo Amusement Park is situated on Tibidabo Mountain and offers breathtaking views of Barcelona. It features a variety of rides and attractions for all ages, including roller coasters, carousels, and a ferris wheel.",
+        "Photo": "./data/photos/barcelona/attractions/tibidabo.png"
+      },
+      {
+        "Name": "Güell Palace",
+        "Description": "Güell Palace, also known as Palau Güell, is a mansion designed by Antoni Gaudí in the Eixample district of Barcelona. It showcases Gaudí's unique architectural style and features elaborate interiors adorned with colorful mosaics, ceramics, and ironwork.",
+        "Photo": "./data/photos/barcelona/attractions/guell.png"
+      },
+      {
+        "Name": "Barcelona Botanical Garden",
+        "Description": "Barcelona Botanical Garden is located on Montjuïc Hill and showcases a diverse collection of Mediterranean plants and ecosystems. It offers educational programs, guided tours, and scenic walking paths for visitors to explore.",
+        "Photo": "./data/photos/barcelona/attractions/botanical.png"
+      },
+      {
+        "Name": "Barcelona Maritime Museum",
+        "Description": "Barcelona Maritime Museum is housed in the Royal Shipyard of Barcelona, a historic building dating back to the 13th century. It features exhibits on maritime history, shipbuilding, navigation, and exploration.",
+        "Photo": "./data/photos/barcelona/attractions/maritime.png"
+      },
+      {
+        "Name": "Picasso Museum",
+        "Description": "Picasso Museum is dedicated to the life and work of the renowned Spanish artist Pablo Picasso. It houses one of the most extensive collections of Picasso's artworks, including paintings, drawings, sculptures, and ceramics.",
+        "Photo": "./data/photos/barcelona/attractions/picasso.png"
+      }
+    ],
+    "restaurants": [
+      {
+        "Name": "El Nacional",
+        "Diet Options": ["Vegetarian Friendly", "Gluten Free Options"],
+        "Address": "Paseo de Gracia 24, bis, 08007 Barcelona Spain",
+        "Price Range": "£17 - £43",
+        "Photo": "./data/photos/barcelona/restaurants/nacional.png"
+      },
+      {
+        "Name": "Sartoria Panatieri Gràcia",
+        "Diet Options": ["Vegetarian Friendly", "Vegan Options"],
+        "Address": "Carrer de l'Encarnacio 51, 08024 Barcelona Spain",
+        "Price Range": "£17 - £30",
+        "Photo": "./data/photos/barcelona/restaurants/sartoria.png"
+      },
+      {
+        "Name": "Ultramarinos Marin",
+        "Diet Options": ["N/A"],
+        "Address": "Carrer De Balmes 187, 08006 Barcelona Spain",
+        "Price Range": "N/A",
+        "Photo": "./data/photos/barcelona/restaurants/ultra.png"
+      },
+      {
+        "Name": "La Balabusta",
+        "Diet Options": ["N/A"],
+        "Address": "Rossello 180, Barcelona Spain",
+        "Price Range": "N/A",
+        "Photo": "./data/photos/barcelona/restaurants/balabusta.png"
+      },
+      {
+        "Name": "Tickets",
+        "Diet Options": ["N/A"],
+        "Address": "Avinguda del Paral·lel, 164, 08015 Barcelona, Spain",
+        "Price Range": "£50 - £150",
+        "Photo": "./data/photos/barcelona/restaurants/tickets.png"
+      },
+      {
+        "Name": "Disfrutar",
+        "Diet Options": ["N/A"],
+        "Address": "Carrer de Villarroel, 163, 08036 Barcelona, Spain",
+        "Price Range": "£80 - £200",
+        "Photo": "./data/photos/barcelona/restaurants/disfrutar.png"
+      },
+      {
+        "Name": "Pakta",
+        "Diet Options": ["N/A"],
+        "Address": "Carrer de Lleida, 5, 08004 Barcelona, Spain",
+        "Price Range": "£70 - £180",
+        "Photo": "./data/photos/barcelona/restaurants/pakta.png"
+      },
+      {
+        "Name": "Dos Palillos",
+        "Diet Options": ["N/A"],
+        "Address": "Carrer d'Elisabets, 9, 08001 Barcelona, Spain",
+        "Price Range": "£60 - £150",
+        "Photo": "./data/photos/barcelona/restaurants/dospalillos.png"
+      }
+    ],
+    "landmarks": [
+      {
+        "Name": "Sagrada Família",
+        "Photo": "./data/photos/barcelona/landmarks/sagrada.png",
+        "Description": "The Sagrada Família is a basilica designed by the Catalan architect Antoni Gaudí. It is a UNESCO World Heritage Site and one of the most iconic landmarks in Barcelona. Construction began in 1882 and is still ongoing, with an expected completion date in the 2020s."
+      },
+      {
+        "Name": "Park Güell",
+        "Photo": "./data/photos/barcelona/landmarks/guell.png",
+        "Description": "Park Güell is a public park designed by Antoni Gaudí, located on Carmel Hill in Barcelona. It features colorful mosaic sculptures, whimsical buildings, and panoramic views of the city. The park is a UNESCO World Heritage Site and one of Gaudí's masterpieces."
+      },
+      {
+        "Name": "Casa Batlló",
+        "Photo": "./data/photos/barcelona/landmarks/batllo.png",
+        "Description": "Casa Batlló is a unique and colorful building designed by Antoni Gaudí, located in the center of Barcelona. It is renowned for its striking façade, organic shapes, and imaginative architectural elements. Casa Batlló is a UNESCO World Heritage Site and a popular tourist attraction."
+      },
+      {
+        "Name": "La Pedrera",
+        "Photo": "./data/photos/barcelona/landmarks/pedrera.png",
+        "Description": "La Pedrera, also known as Casa Milà, is an iconic building designed by Antoni Gaudí in the Eixample district of Barcelona. It features undulating stone facades, wrought iron balconies, and an innovative rooftop terrace. La Pedrera is a UNESCO World Heritage Site and offers guided tours to explore its architecture and history."
+      },
+      {
+        "Name": "Barri Gòtic",
+        "Photo": "./data/photos/barcelona/landmarks/gotic.png",
+        "Description": "Barri Gòtic, also known as the Gothic Quarter, is the historic center of Barcelona. It features narrow medieval streets, ancient buildings, Gothic architecture, and landmarks such as the Barcelona Cathedral and Plaça Reial. Barri Gòtic is a vibrant neighborhood with shops, restaurants, and cultural attractions."
+      },
+      {
+        "Name": "Magic Fountain of Montjuïc",
+        "Photo": "./data/photos/barcelona/landmarks/montjuic.png",
+        "Description": "The Magic Fountain of Montjuïc is a spectacular fountain located at the base of Montjuïc Hill in Barcelona. It features a choreographed water and light show set to music, creating a magical and mesmerizing experience for visitors. The fountain is a popular attraction, especially during evening performances."
+      },
+      {
+        "Name": "Camp Nou",
+        "Photo": "./data/photos/barcelona/landmarks/nou.png",
+        "Description": "Camp Nou is the home stadium of FC Barcelona and the largest football stadium in Europe. It has a seating capacity of over 99,000 and hosts football matches, concerts, and other events. Visitors can take guided tours of the stadium, museum, and learn about the history of FC Barcelona."
+      },
+      {
+        "Name": "Barcelona Cathedral",
+        "Photo": "./data/photos/barcelona/landmarks/cathedral.png",
+        "Description": "The Barcelona Cathedral, also known as the Cathedral of the Holy Cross and Saint Eulalia, is a Gothic cathedral located in the Gothic Quarter of Barcelona. It features stunning stained glass windows, intricate carvings, and a serene cloister. The cathedral is dedicated to Saint Eulalia, the patron saint of Barcelona."
+      }
+    ]
+  },
+  "Dubai": {
+    "attractions": [
+      {
+        "Name": "Al Fahidi Historical Neighbourhood",
+        "Description": "Explore the rich history of Dubai at Al Fahidi Historical Neighbourhood, also known as Al Bastakiya, with its narrow lanes, traditional wind-tower architecture, and museums.",
+        "Photo": "./data/photos/dubai/attractions/alfahidi.png"
+      },
+      {
+        "Name": "Dubai Creek",
+        "Description": "Take a traditional abra (water taxi) ride along Dubai Creek, a historic waterway that divides the city into Bur Dubai and Deira, and admire the skyline and traditional dhows.",
+        "Photo": "./data/photos/dubai/attractions/creek.png"
+      },
+      {
+        "Name": "Ski Dubai",
+        "Description": "Experience winter sports in the desert at Ski Dubai, an indoor ski resort located in the Mall of the Emirates, offering skiing, snowboarding, and even penguin encounters.",
+        "Photo": "./data/photos/dubai/attractions/ski.png"
+      },
+      {
+        "Name": "Dubai Desert Conservation Reserve",
+        "Description": "Embark on a desert safari adventure at the Dubai Desert Conservation Reserve, where you can enjoy dune bashing, camel rides, falconry displays, and traditional Bedouin experiences.",
+        "Photo": "./data/photos/dubai/attractions/conservation.png"
+      },
+      {
+        "Name": "Dubai Gold Souk",
+        "Description": "Indulge in a shopping spree at the Dubai Gold Souk, one of the largest gold markets in the world, offering a dazzling array of gold jewelry, diamonds, and precious stones.",
+        "Photo": "./data/photos/dubai/attractions/gold.png"
+      },
+      {
+        "Name": "Dubai Opera",
+        "Description": "Experience world-class performances at Dubai Opera, a stunning architectural marvel located in Downtown Dubai, hosting opera, ballet, concerts, and theater productions.",
+        "Photo": "./data/photos/dubai/attractions/opera.png"
+      },
+      {
+        "Name": "Dubai Spice Souk",
+        "Description": "Immerse yourself in the sights and scents of the Dubai Spice Souk, a bustling market in Deira offering a wide variety of spices, herbs, and traditional Middle Eastern products.",
+        "Photo": "./data/photos/dubai/attractions/spice.png"
+      },
+      {
+        "Name": "Jumeirah Beach Residence (JBR)",
+        "Description": "Relax and unwind at Jumeirah Beach Residence (JBR), a bustling waterfront community with a beautiful beach, waterfront promenade, shops, restaurants, and entertainment options.",
+        "Photo": "./data/photos/dubai/attractions/jbr.png"
+      }
+    ],
+    "restaurants": [
+      {
+        "Name": "At.mosphere",
+        "Diet Options": ["Vegetarian Options", "Vegan Options", "Gluten Free Options"],
+        "Address": "122nd Floor, Burj Khalifa, Downtown Dubai",
+        "Price Range": "££££",
+        "Photo": "./data/photos/dubai/restaurants/atmosphere.png"
+      },
+      {
+        "Name": "Zuma",
+        "Diet Options": ["Vegetarian Options"],
+        "Address": "Gate Village 06, DIFC",
+        "Price Range": "££££",
+        "Photo": "./data/photos/dubai/restaurants/zuma.png"
+      },
+      {
+        "Name": "Al Hadheerah",
+        "Diet Options": ["Vegetarian Options"],
+        "Address": "Bab Al Shams Desert Resort & Spa, Al Qudra Road",
+        "Price Range": "££££",
+        "Photo": "./data/photos/dubai/restaurants/hadheerah.png"
+      },
+      {
+        "Name": "Pierchic",
+        "Diet Options": ["Vegetarian Options", "Gluten Free Options"],
+        "Address": "Al Qasr, Madinat Jumeirah",
+        "Price Range": "££££",
+        "Photo": "./data/photos/dubai/restaurants/pierchic.png"
+      },
+      {
+        "Name": "Nathan Outlaw at Al Mahara",
+        "Diet Options": ["N/A"],
+        "Address": "Burj Al Arab, Jumeirah Road, Umm Suqeim",
+        "Price Range": "£££££",
+        "Photo": "./data/photos/dubai/restaurants/outlaw.png"
+      },
+      {
+        "Name": "Nobu Dubai",
+        "Diet Options": ["N/A"],
+        "Address": "Atlantis The Palm, Crescent Road, The Palm Jumeirah",
+        "Price Range": "£££££",
+        "Photo": "./data/photos/dubai/restaurants/nobu.png"
+      },
+      {
+        "Name": "Indego by Vineet",
+        "Diet Options": ["N/A"],
+        "Address": "Grosvenor House, Al Emreef Street, Dubai Marina",
+        "Price Range": "££££",
+        "Photo": "./data/photos/dubai/restaurants/indego.png"
+      },
+      {
+        "Name": "La Petite Maison",
+        "Diet Options": ["N/A"],
+        "Address": "Gate Village 8, DIFC",
+        "Price Range": "££££",
+        "Photo": "./data/photos/dubai/restaurants/maison.png"
+      }
+    ],
+    "landmarks": [
+      {
+        "Name": "Burj Al Arab",
+        "Photo": "./data/photos/dubai/landmarks/burj.png",
+        "Description": "Burj Al Arab is a luxury hotel located on an artificial island off the coast of Dubai. It is known for its distinctive sail-shaped silhouette and luxurious amenities, including fine dining restaurants, a helipad, and a private beach."
+      },
+      {
+        "Name": "Dubai Fountain",
+        "Photo": "./data/photos/dubai/landmarks/fountain.png",
+        "Description": "The Dubai Fountain is the world's largest choreographed fountain system, located at the base of the Burj Khalifa. It features mesmerizing water jets, synchronized to music and illuminated by colorful lights, creating spectacular performances."
+      },
+      {
+        "Name": "The Dubai Mall",
+        "Photo": "./data/photos/dubai/landmarks/mall.png",
+        "Description": "The Dubai Mall is one of the largest shopping malls in the world, featuring over 1,200 retail outlets, including high-end fashion brands, restaurants, and entertainment attractions such as an indoor ice skating rink and an indoor theme park."
+      },
+      {
+        "Name": "Palm Jumeirah",
+        "Photo": "./data/photos/dubai/landmarks/jumeirah.png",
+        "Description": "Palm Jumeirah is an artificial island in the shape of a palm tree, featuring luxury hotels, residential villas, and entertainment attractions such as the Atlantis resort and Aquaventure Waterpark."
+      },
+      {
+        "Name": "Dubai Marina",
+        "Photo": "./data/photos/dubai/landmarks/marina.png",
+        "Description": "Dubai Marina is a man-made canal city, lined with skyscrapers, luxury yachts, and waterfront promenades. Visitors can enjoy leisurely strolls, dine at waterfront restaurants, or embark on yacht cruises."
+      },
+      {
+        "Name": "IMG Worlds of Adventure",
+        "Photo": "./data/photos/dubai/landmarks/imgworlds.png",
+        "Description": "IMG Worlds of Adventure is the largest indoor theme park in the world, featuring various themed zones based on popular cartoon and comic book characters. It offers thrilling rides, live entertainment, and dining options."
+      },
+      {
+        "Name": "Dubai Miracle Garden",
+        "Photo": "./data/photos/dubai/landmarks/miracle.png",
+        "Description": "Dubai Miracle Garden is the world's largest flower garden, featuring over 150 million flowers arranged in stunning displays and sculptures. It offers a colorful and vibrant oasis in the desert landscape."
+      },
+      {
+        "Name": "Dubai Frame",
+        "Photo": "./data/photos/dubai/landmarks/frame.png",
+        "Description": "Dubai Frame is an architectural landmark located in Zabeel Park, offering panoramic views of old and new Dubai from its 150-meter-high observation deck. It also features an immersive museum showcasing the city's history and future."
+      }
+    ]
+  },
+  "Mexico City": {
+    "attractions": [
+      {
+        "Name": "Frida Kahlo Museum",
+        "Description": "Explore the former home of the iconic Mexican artist Frida Kahlo, known as La Casa Azul, which now serves as a museum showcasing her life and works.",
+        "Photo": "./data/photos/mexicocity/attractions/frida.png"
+      },
+      {
+        "Name": "Palacio de Correos de México",
+        "Description": "Visit the stunning Palacio de Correos, a historic post office building known for its impressive architecture and ornate interiors.",
+        "Photo": "./data/photos/mexicocity/attractions/correos.png"
+      },
+      {
+        "Name": "Casa Luis Barragán",
+        "Description": "Discover the architectural masterpiece of Casa Luis Barragán, a UNESCO World Heritage site designed by the renowned architect Luis Barragán.",
+        "Photo": "./data/photos/mexicocity/attractions/casaluis.png"
+      },
+      {
+        "Name": "Museum of Anthropology",
+        "Description": "Immerse yourself in the rich history and culture of Mexico at the Museum of Anthropology, home to a vast collection of artifacts and exhibits.",
+        "Photo": "./data/photos/mexicocity/attractions/anthropology.png"
+      },
+      {
+        "Name": "Chapultepec Zoo",
+        "Description": "Enjoy a day surrounded by nature at Chapultepec Zoo, where you can observe a wide variety of animals from around the world.",
+        "Photo": "./data/photos/mexicocity/attractions/zoo.png"
+      },
+      {
+        "Name": "Mercado de Jamaica",
+        "Description": "Experience the vibrant atmosphere of Mercado de Jamaica, one of Mexico City's largest and oldest traditional markets, offering a wide range of fresh produce, flowers, and more.",
+        "Photo": "./data/photos/mexicocity/attractions/mercado.png"
+      },
+      {
+        "Name": "Papalote Museo del Niño",
+        "Description": "Bring your family to Papalote Museo del Niño, a hands-on children's museum featuring interactive exhibits on science, technology, and culture.",
+        "Photo": "./data/photos/mexicocity/attractions/papalote.png"
+      },
+      {
+        "Name": "Basilica of Our Lady of Guadalupe",
+        "Description": "Visit the Basilica of Our Lady of Guadalupe, one of the most important pilgrimage sites in Mexico, dedicated to the Virgin Mary.",
+        "Photo": "./data/photos/mexicocity/attractions/basilica.png"
+      }
+    ],
+    "restaurants": [
+      {
+        "Name": "Pujol",
+        "Diet Options": ["Vegetarian Options", "Vegan Options", "Gluten Free Options"],
+        "Address": "Tennyson 133, Polanco, Miguel Hidalgo, 11570 Ciudad de México, CDMX, Mexico",
+        "Price Range": "££££",
+        "Photo": "./data/photos/mexicocity/restaurants/pujol.png"
+      },
+      {
+        "Name": "Quintonil",
+        "Diet Options": ["Vegetarian Options"],
+        "Address": "Newton 55, Polanco, Miguel Hidalgo, 11560 Ciudad de México, CDMX, Mexico",
+        "Price Range": "££££",
+        "Photo": "./data/photos/mexicocity/restaurants/quintonil.png"
+      },
+      {
+        "Name": "Biko",
+        "Diet Options": ["Vegetarian Options"],
+        "Address": "Presidente Masaryk 407, Polanco, Miguel Hidalgo, 11550 Ciudad de México, CDMX, Mexico",
+        "Price Range": "££££",
+        "Photo": "./data/photos/mexicocity/restaurants/biko.png"
+      },
+      {
+        "Name": "Rosetta",
+        "Diet Options": ["Vegetarian Options", "Gluten Free Options"],
+        "Address": "Colima 166, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX, Mexico",
+        "Price Range": "££££",
+        "Photo": "./data/photos/mexicocity/restaurants/rosetta.png"
+      },
+      {
+        "Name": "Contramar",
+        "Diet Options": ["N/A"],
+        "Address": "Calle Durango 200, Roma Nte., 06700 Ciudad de México, CDMX, Mexico",
+        "Price Range": "£££",
+        "Photo": "./data/photos/mexicocity/restaurants/contramar.png"
+      },
+      {
+        "Name": "Azul Historico",
+        "Diet Options": ["N/A"],
+        "Address": "Isabel La Católica 30, Centro Histórico, 06000 Ciudad de México, CDMX, Mexico",
+        "Price Range": "£££",
+        "Photo": "./data/photos/mexicocity/restaurants/azul.png"
+      },
+      {
+        "Name": "Maximo Bistrot Local",
+        "Diet Options": ["N/A"],
+        "Address": "Tonala 133, Roma Nte., 06700 Ciudad de México, CDMX, Mexico",
+        "Price Range": "£££",
+        "Photo": "./data/photos/mexicocity/restaurants/maximo.png"
+      },
+      {
+        "Name": "Lalo!",
+        "Diet Options": ["N/A"],
+        "Address": "Zacatecas 173, Roma Nte., 06700 Ciudad de México, CDMX, Mexico",
+        "Price Range": "£££",
+        "Photo": "./data/photos/mexicocity/restaurants/lalo.png"
+      }
+    ],
+    "landmarks": [
+      {
+        "Name": "National Palace",
+        "Photo": "./data/photos/mexicocity/landmarks/nationalpalace.png",
+        "Description": "The National Palace is a historic building located in the heart of Mexico City's main square, the Zócalo. It serves as the official residence of the President of Mexico and houses various government offices. The palace features impressive architecture, murals by renowned artist Diego Rivera, and is open to the public for guided tours."
+      },
+      {
+        "Name": "Chapultepec Castle",
+        "Photo": "./data/photos/mexicocity/landmarks/chapultepec.png",
+        "Description": "Chapultepec Castle is a historic fortress located atop Chapultepec Hill in Mexico City. It offers panoramic views of the city and is home to the National Museum of History. The castle has served various purposes throughout history, including as a royal residence, presidential palace, and military academy."
+      },
+      {
+        "Name": "Zócalo",
+        "Photo": "./data/photos/mexicocity/landmarks/zocalo.png",
+        "Description": "Zócalo, officially known as Plaza de la Constitución, is the main square of Mexico City and one of the largest public squares in the world. It is surrounded by historic buildings, including the National Palace, Metropolitan Cathedral, and Federal District buildings. The square hosts cultural events, festivals, and political gatherings."
+      },
+      {
+        "Name": "Teotihuacán",
+        "Photo": "./data/photos/mexicocity/landmarks/teotihuacan.png",
+        "Description": "Teotihuacán is an ancient Mesoamerican city located near Mexico City. It was one of the largest cities in the pre-Columbian Americas and is known for its impressive pyramids, temples, and Avenue of the Dead. Teotihuacán is a UNESCO World Heritage Site and a popular archaeological site for visitors."
+      },
+      {
+        "Name": "Templo Mayor",
+        "Photo": "./data/photos/mexicocity/landmarks/templomayor.png",
+        "Description": "Templo Mayor is an archaeological site in the historic center of Mexico City, near the Zócalo. It was the main temple of the Aztec capital of Tenochtitlán and is dedicated to the Aztec gods Huitzilopochtli and Tlaloc. The site features ruins, sculptures, and a museum showcasing artifacts from the Aztec civilization."
+      },
+      {
+        "Name": "Bellas Artes Palace",
+        "Photo": "./data/photos/mexicocity/landmarks/bellasartes.png",
+        "Description": "Bellas Artes Palace, officially known as the Palacio de Bellas Artes, is a prominent cultural center in Mexico City. It features an impressive Art Nouveau and Neoclassical architecture and hosts exhibitions, concerts, ballets, and theatrical performances. The palace is home to the renowned Fine Arts Museum."
+      },
+      {
+        "Name": "Xochimilco",
+        "Photo": "./data/photos/mexicocity/landmarks/xochimilco.png",
+        "Description": "Xochimilco is a picturesque neighborhood in the southern part of Mexico City known for its network of canals, colorful trajineras (traditional boats), and floating gardens called chinampas. Visitors can enjoy leisurely boat rides, mariachi music, and traditional Mexican cuisine while exploring this UNESCO World Heritage Site."
+      },
+      {
+        "Name": "Coyoacán",
+        "Photo": "./data/photos/mexicocity/landmarks/coyoacan.png",
+        "Description": "Coyoacán is a charming neighborhood in Mexico City famous for its cobblestone streets, colonial architecture, and vibrant cultural scene. It is home to landmarks such as the Frida Kahlo Museum, Casa Azul (Blue House), and the historic main square, Plaza Hidalgo. Coyoacán offers art galleries, artisan markets, and traditional Mexican cuisine."
+      }
+    ]
+  },
+  "Auckland": {
+    "attractions": [
+      {
+        "Name": "Winter Garden Auckland Domain",
+        "Description": "The Domain Wintergardens is a complex of gardens located within the Pukekawa / Auckland Domain. It is registered with the New Zealand Historic Places Trust as a Category I historic place.",
+        "Photo": "./data/photos/auckland/attractions/domain.jpg"
+      },
+      {
+        "Name": "Sky Tower",
+        "Description": "It’s hard to imagine an Auckland skyline without the iconic Sky Tower. For over 25 years now, this magnificent 328m high structure has been the focal point of our beautiful city, rising up out of the land to delight locals and visitors alike. Now it’s your turn to discover the full story of this incredible feat of modern engineering – its pioneering past, colourful present and visionary future. So join us above the clouds to experience incredible 360° views of Tāmaki Makaurau, taking in ancient volcanoes, sparkling sunlit harbours and beyond. And if breath-taking panoramas alone aren’t enough to excite you, indulge in a wealth of dining options, interactive installations, and adrenaline-fueled activities.",
+        "Photo": "./data/photos/auckland/attractions/sky_tower.jpg"
+      },
+      {
+        "Name": "Sofitel Auckland Viaduct Harbour",
+        "Description": "Experience the very best of modern luxury at Sofitel Auckland, here you can indulge in a decidedly chic encounter that combines the spirit of our Viaduct Harbour location with the French Art de Vivre. Sofitel offers tailor-made services and splendid facilities that are stylish and cosmopolitan. Authentic and lively culinary experiences in the restaurant, soothing wellness journeys in the spa, and exquisitely designed spaces that exude chic design with a hint of the French touch. The unmistakable influence of fashion has imbued Sofitel with a couture approach to service, from the fine attention paid to the smallest detail, to the elaborate flourishes that enchant and delight guests. As proud “Ambassadors” of l’Art de Vivre around the world, we are committed to delivering hospitality excellence and heartfelt service, in a manner that is tailor-made to you.",
+        "Photo": "./data/photos/auckland/attractions/viaduct.jpg"
+      },
+      {
+        "Name": "Auckland Bridge Climb",
+        "Description": "AJ Hackett Bungy offers exclusive access to the Auckland Harbour Bridge which stretches over the Westhaven Marina. Magnificent views of Auckland can be enjoyed on the Auckland Bridge Climb, an unforgettable adventure that takes climbers under, around, up and over the historic Auckland Harbour Bridge. This suspended span bridge was the last of its kind to be built in the world, comprised of 3000 berths and is the largest in the southern hemisphere. Custom engineered walkways provide a safe, enjoyable and easy-going experience while you listen to full commentary from your tour guide and enjoy the great photo opportunities and view Bungy Jumping up close.",
+        "Photo": "./data/photos/auckland/attractions/bridge.jpg"
+      },
+      {
+        "Name": "Auckland Central",
+        "Description": "European, Polynesian, Asian and strong Maori heritages give Auckland its distinctive culture. Discover the history of the world's largest Polynesian city through Maori treasures at Auckland Museum and experience the lives of 19th-century settlers at Howick Historical Village. For a relaxing afternoon, spend time people-watching in charming Ponsonby, hop a ferry to Devonport for scenic views and laid-back shopping and dining, or stroll through lovely Auckland Domain. Farther afield, take a day trip to one of the nearby islands, including Waiheke, Rangitoto, or Tiritiri Matangi for wine tours or outdoor adventures.",
+        "Photo": "./data/photos/auckland/attractions/central.jpg"
+      },
+      {
+        "Name": "New Zealand Maritime Museum",
+        "Description": "Dive deeper into our maritime history and discover the genius of early Pacific navigators, their great voyages of exploration and the discovery Aotearoa New Zealand. Cruise Auckland’s sparkling Waitemata Harbour in one of our heritage vessels - sailing twice daily. Help the crew hoist the sails or sit back and take in the city skyline. Find out what it takes to win the America’s Cup - from backyard boat-builders to teamwork and race-winning technology. Plus, see one of only seven replicas of the America’s Cup. Immerse yourself in early European immigration and test your sea-legs in the replica 1840s rocking cabin. Bang! Watch from the concourse as our replica cannon fires every day at 12pm into the marina. Soak up our stories of the sea with a complimentary guided tour departing from our ticket desk 10.30am Friday - Sunday.",
+        "Photo": "./data/photos/auckland/attractions/maritime_museum.jpg"
+      },
+      {
+        "Name": "Hobbiton Movie Set Small Group Tour from Auckland",
+        "Description": "The Hobbiton Movie Set in Matamata is a popular New Zealand attraction, so going with a small group of fans makes it more intimate. From Auckland, hop on a minibus customized with Wi-Fi access, drop-down screens, and USB charging points to enhance your experience. On board, find an informative guide who is passionate about the filming site for 'Lord of the Rings' and 'The Hobbit'.",
+        "Photo": "./data/photos/auckland/attractions/hobbiton.jpg"
+      },
+      {
+        "Name": "Auckland Art Gallery Toi o Tāmaki",
+      "Description": "Explore one of New Zealand's most important visual arts institutions, offering a rich collection of national and international works. The gallery's extensive collection includes pieces from Maori and Pacific artists, alongside European classics and contemporary works.",
+      "Photo": "./data/photos/auckland/attractions/art_gallery.jpeg"
+      }
+    ],
+    "restaurants": [
+      {
+        "Name": "The Grove",
+        "Diet Options": ["Vegetarian Friendly", "Vegan Options", "Gluten Free Options"],
+        "Address": "Albert Street, Auckland CBD, Auckland 1010, New Zealand",
+        "Price Range": "£92 - £111",
+        "Photo": "./data/photos/auckland/restaurants/the_grove.jpg"
+      },
+      {
+        "Name": "Sails Restaurant",
+        "Diet Options": ["Vegetarian Friendly", "Vegan Options", "Gluten Free Options"],
+        "Address": "St Marys Bay, Auckland 1011, New Zealand",
+        "Price Range": "£9 - £21",
+        "Photo": "./data/photos/auckland/restaurants/sails.jpg"
+      },
+      {
+        "Name": "Paris Butter",
+        "Diet Options": ["Vegetarian Friendly", "Vegan Options", "Gluten Free Options"],
+        "Address": "166 Jervois Road, Herne Bay, Auckland 1011, New Zealand",
+        "Price Range": "£40 - £100",
+        "Photo": "./data/photos/auckland/restaurants/paris_butter.jpg"
+      },
+      {
+        "Name": "Kazuya",
+        "Diet Options": ["Vegetarian Friendly", "Vegan Options"],
+        "Address": "215-173 Symonds Street, Eden Terrace, Auckland 1010, New Zealand",
+        "Price Range": "£38 - £66",
+        "Photo": "./data/photos/auckland/restaurants/kazuya.jpg"
+      },
+      {
+        "Name": "Sidart",
+        "Diet Options": ["Vegetarian Friendly", "Vegan Options", "Gluten Free Options"],
+        "Address": "suite 1/283 Ponsonby Road, Ponsonby, Auckland 1011, New Zealand",
+        "Price Range": "£12 - £100",
+        "Photo": "./data/photos/auckland/restaurants/sidart.jpg"
+      },
+      {
+        "Name": "One Tree Grill",
+        "Diet Options": ["Vegetarian Friendly", "Vegan Options", "Gluten Free Options"],
+        "Address": "Pah Road, Epsom, Auckland 1023, New Zealand",
+        "Price Range": "£11 - £20",
+        "Photo": "./data/photos/auckland/restaurants/grill.jpg"
+      },
+      {
+        "Name": "Ahi",
+        "Diet Options": ["Vegetarian Friendly", "Vegan Options", "Gluten Free Options"],
+        "Address": "3 Wise Men - Commercial Bay, Shop 17, Level 1, Commercial Bay, Auckland 1010, New Zealand",
+        "Price Range": "£16 - £26",
+        "Photo": "./data/photos/auckland/restaurants/ahi.jpg"
+      },
+      {
+        "Name": "Cibo",
+        "Diet Options": ["Vegetarian Friendly", "Vegan Options", "Gluten Free Options"],
+        "Address": "3.2/1 Cleveland Road, Parnell, Auckland 1052, New Zealand",
+        "Price Range": "£9 - £28",
+        "Photo": "./data/photos/auckland/restaurants/cibo.jpg"
+      }
+    ],
+    "landmarks": [
+      {
+        "Name": "Ferry Building",
+        "Photo": "./data/photos/auckland/landmarks/ferrybuilding.png",
+        "Description": "The Ferry Building is one of the most imposing port buildings in New Zealand, and testimony to the importance of water transport in early twentieth-century Auckland. Erected by the Auckland Harbour Board in 1909-1912, this ornate structure was intended to be a focus for the extensive ferry network entering and leaving the city. It was also intended to raise a regular income for the harbour board, as it was designed entirely for lease. Its construction was part of a costly reorganisation of the docks, which included the building of the ferro-cement Queen's Wharf. These works were undertaken by the city in a bid to retain its position as a leading Southern Hemisphere port."
+      },
+      {
+        "Name": "Cathedral Church of St. Mary",
+        "Photo": "./data/photos/auckland/landmarks/cathedral_church.jpg",
+        "Description": "Before Holy Trinity Cathedral, St. Mary’s was the seat of the Anglican Diocese of Auckland. In 1957, the cornerstone for Holy Trinity Cathedral was placed, and the cathedral completed in 1965. In 1982, St. Mary’s was put on rollers and moved across Parnell Road, turned 90 degrees onto its present site next to Holy Trinity Cathedral. St. Mary’s is 164 feet long and is the largest wooden Gothic church in the world. Services are held in both the cathedral and church."
+      },
+      {
+        "Name": "Rangitoto Island",
+        "Photo": "./data/photos/auckland/landmarks/island.jpg",
+        "Description": "This volcanic island, which last erupted 600 years ago, offers bird-watching, swimming, fishing, walking trails, colorful flora and spectacular views from the summit of its cone-shaped mountain."
+      },
+      {
+        "Name": "Stockade Hill",
+        "Photo": "./data/photos/auckland/landmarks/stockade.jpg",
+        "Description": "Possibly the best views of the Hauraki Gulf in the whole of Auckland. Stockade Hill was the location of the stockade built to protect Howick and its population from Maori during the New Zealand Land Wars. It is located on the main road into Howick. Howick's war memorial is located in the centre of the remains of the stockade's earthworks which are readily visible today."
+      },
+      {
+        "Name": "Awhitu Regional Park",
+        "Photo": "./data/photos/auckland/landmarks/awhitu.jpg",
+        "Description": "A tranquil park with safe sandy beaches lies tucked inside the southern headland of the Manukau Harbour on Auckland's west coast."
+      },
+      {
+        "Name": "MJ Savage Memorial Park",
+        "Photo": "./data/photos/auckland/landmarks/memorial_park.jpg",
+        "Description": "Located at Auckland's Bastion Point, the memorial to Michael Joseph Savage, New Zealand's first Labour prime minister, 1935–1940, overlooks the Waitemata Harbour. Like the Massey Memorial in Wellington, it is built on the site of a former gun emplacement dating from the 'Russian Scare' of the 1880s."
+      },
+      {
+        "Name": "Ponsonby",
+        "Photo": "./data/photos/auckland/landmarks/ponsonby.jpg",
+        "Description": "A predominantly upper-middle class residential suburb, Ponsonby today is also known in Auckland for its dining and shopping establishments – many restaurants, cafes, art galleries, up-market shops and nightclubs are located along Ponsonby Road."
+      },
+      {
+        "Name": "Mount Eden",
+        "Photo": "./data/photos/auckland/landmarks/mount_eden.png",
+        "Description": "Mount Eden is the highest natural point in Auckland. Located in the suburb of Mount Eden, this dormant volcanic cone is a popular tourist attraction, offering panoramic views of the city and its surroundings. Visitors can hike to the summit or explore the lush crater."
+      }
+    ]
+  },
+  "Phuket": {
+    "attractions": [
+      {
+        "Name": "Big Buddha Phuket",
+        "Description": "Phuket Big Buddha, or The Great Buddha of Phuket, is a seated Maravija Buddha statue in Phuket, Thailand. The official name is Phra Phutta Ming Mongkol Eknakiri, shortened to Ming Mongkol Buddha. Sitting atop Nakkerd Hill near Chalong, construction began in 2004. Expansion of the base was ongoing as of 2015.",
+        "Photo": "./data/photos/phuket/attractions/buddha.jpeg"
+      },
+      {
+        "Name": "Phang Nga Bay Sea Cave Canoeing & James Bond Island - Big Boat",
+        "Description": "With turquoise waters, limestone cliffs, sandy beaches, and lush jungle, Phang Nga Bay boasts islands straight out of a brochure. Explore them with a guide on this all-inclusive day trip. Kayak through caves and mangroves at Koh Panak and surreal rock formations at Hong Island. Soak up views of James Bond Island then lounge on the beach at Lawa Island. Refuel with a buffet lunch onboard your boat.",
+        "Photo": "./data/photos/phuket/attractions/phang.jpg"
+      },
+      {
+        "Name": "Andamanda Phuket",
+        "Description": "Andamanda Phuket is the island's new tourist and leisure destination that brings together the majesty of the Andaman Sea in one place on an area of over 58 rai. The design blends the elements of modern lifestyle with Thai and local cultural heritage, reflected in all areas surrounded by lush tropical landscapes and limestone reefs of the Andaman Sea. Andamanda Phuket also brings together many of the country's best experiences. The 10 rai Wave Pool is the only place in Thailand that is capable of generating waves up to 3 meters high. Thailand's longest double rail and Lazy River slides, Koh Tapu, is a beautiful replica with a layered arrangement of rocks equivalent to the real thing. The white sandy beach with a length exceeding 300 meters elevates the Andamanda beach experience to the next level.",
+        "Photo": "./data/photos/phuket/attractions/andamanda.jpg"
+      },
+      {
+        "Name": "Phuket Elephant Care",
+        "Description": "Come and experience the joy of elephants at Phuket Elephant Care, a safe home for these majestic creatures. Our elephants are no longer subjected to mistreatment or violence. Instead, they live in a healthy, stress-free environment surrounded by lush forests and natural mud pools. Here, you can observe the wonderful bond between the elephants and their mahouts, as well as the value of their well-being.",
+        "Photo": "./data/photos/phuket/attractions/elephant.jpg"
+      },
+      {
+        "Name": "Pullman Phuket Arcadia Naithon Beach",
+        "Description": "Experience the Pullman Phuket Lifestyle at Pullman Phuket Arcadia Naithon Beach. Perched on the headland overlooking the crystal waters of the Andaman Sea. Pullman Phuket Arcadia Naithon Beach is the most stunning Phuket Resort for a private escape. This luxury Pullman in Phuket boasts a charming setting with ocean views. Set against the backdrop of Naithon Beach. Blurring the lines between the pool, sea and sky. Guests have direct access to Naithon Beach. Named one of the best beaches on the west coast of Phuket. Just a 12 minute drive from the Airport, your vacation starts sooner and lasts longer at Pullman Phuket Arcadia Naithon Beach.",
+        "Photo": "./data/photos/phuket/attractions/pullman.jpg"
+      },
+      {
+        "Name": "The Lake Phuket Elephant Home",
+        "Description": "Ethical tourism! Forest and lake sanctuary for rescued elephants. Free roaming elephants. No chains. No hooks. No riding. Feed and bathe with the elephants in their natural habitat. Choose to join the Daily Group visits or book a Private Group Visit (max 9 people) for a more intimate experience. If you're on your honeymoon, why not enjoy an exclusive adventure for two?",
+        "Photo": "./data/photos/phuket/attractions/the_lake.jpg"
+      },
+      {
+        "Name": "Luxury Boat to James Bond Islands with Lunch and Sunset Dinner",
+        "Description": "Many boat tours go to James Bond Island but this one lets you experience it just like Bond: luxuriously. As you set sail aboard a catamaran, enjoy a welcome drink and delicious buffet lunch. Afterward, swim off Lawa island then kayak into a cave at the Hongs of Phang Nga. After exploring James Bond Island by longboat you'll enjoy a sunset dinner on the way back.",
+        "Photo": "./data/photos/phuket/attractions/boat.jpg"
+      },
+      {
+        "Name": "Phuket FantaSea",
+        "Description": "Experience the ultimate cultural theme park of Phuket, showcasing Thailand's rich and exotic heritage. The award-winning spectacular show features live elephants, acrobats, pyrotechnics, and more, all in one stunningly designed complex.",
+        "Photo": "./data/photos/phuket/attractions/fantasea.png"
+      }
+    ],
+    "restaurants": [
+      {
+        "Name": "Tambu Phuket",
+        "Diet Options": "Vegetarian Friendly, Vegan Options, Gluten Free Options",
+        "Address": "Avista Hideaway Phuket Patong - MGallery, 39, 9 Muen-Ngern Rd, Tambon Patong, Amphur Kathu, Phuket 83150, Thailand",
+        "Price Range": "£20 - £70",
+        "Photo": "./data/photos/phuket/restaurants/tambu.jpg"
+      },
+      {
+        "Name": "Ginja Taste",
+        "Diet Options": "Vegetarian Friendly, Vegan Options, Gluten Free Options",
+        "Address": "Avista Hideaway Phuket Patong - MGallery, 39, 9 Muen-Ngern Rd, Tambon Patong, Amphur Kathu, Phuket 83150, Thailand",
+        "Price Range": "£40 - £90",
+        "Photo": "./data/photos/phuket/restaurants/ginja.jpg"
+      },
+      {
+        "Name": "Pinto Restaurant",
+        "Diet Options": "Vegetarian Friendly, Vegan Options, Gluten Free Options",
+        "Address": "Pinto Restaurant, 333 Moo 3, Kamala Sub-district, Kamala Beach Kathu District, City, Phuket 83150, Thailand",
+        "Price Range": "£119 - £1,433",
+        "Photo": "./data/photos/phuket/restaurants/pinto.jpg"
+      },
+      {
+        "Name": "La Sala - Anantara Mai Khao Phuket Villas",
+        "Diet Options": "Vegetarian Friendly, Vegan Options, Gluten Free Options",
+        "Address": "Mai Khao Beach, Mai Khao, Thalang District, Phuket 83110, Thailand",
+        "Price Range": "£7 - £48",
+        "Photo": "./data/photos/phuket/restaurants/la_sala.jpg"
+      },
+      {
+        "Name": "Sea Fire Salt - Anantara Mai Khao Phuket Villas",
+        "Diet Options": "Vegetarian Friendly, Vegan Options, Gluten Free Options",
+        "Address": "579V+M86, Tambon Mai Khao, Amphoe Thalang, Chang Wat Phuket 83110, Thailand",
+        "Price Range": "£4 - £130",
+        "Photo": "./data/photos/phuket/restaurants/sea_salt.jpg"
+      },
+      {
+        "Name": "Malika Sky Bar By Kalima Resort",
+        "Diet Options": "Vegetarian Friendly, Vegan Options, Gluten Free Options",
+        "Address": "Malika Sky Bar, 338 1 Phabaramee Road Pa Tong, Kathu District, Phuket 83150, Thailand",
+        "Price Range": "£40 - £100",
+        "Photo": "./data/photos/phuket/restaurants/malika.jpg"
+      },
+      {
+        "Name": "Vero Italian Trattoria and Wine Bar",
+        "Diet Options": "Vegetarian Friendly, Vegan Options, Gluten Free Options",
+        "Address": "Elements Restaurant, 22/2 Moo 4, Saku, Talang, Phuket 83110, Thailand",
+        "Price Range": "£5 - £98",
+        "Photo": "./data/photos/phuket/restaurants/vero.jpg"
+      },
+      {
+        "Name": "Le V restaurant",
+        "Diet Options": "Vegetarian Friendly, Vegan Options, Gluten Free Options",
+        "Address": "Neil Donkin Makeup Artist Phuket, Andaman Hill, 206 Pra Baramee Road, Ban Patong, Phuket, 83150, Thailand",
+        "Price Range": "£7 - £65",
+        "Photo": "./data/photos/phuket/restaurants/le_v.jpg"
+      }
+    ],
+    "landmarks": [
+      {
+        "Name": "Bangla Road",
+        "Photo": "./data/photos/phuket/landmarks/bangla.jpg",
+        "Description": "Adjacent to Patong Beach, this buzzing and vibrant strip is a great place to start your Phuket pub crawl. Enter past the iconic Patong Beach sign and prepare your senses for the neon lights, throngs of tourists and touts, street vendors selling snacks, and dance anthems pumping from the plethora of go-go bars and clubs. Those planning to partake in the evening festivities can purchase skip-the-line tickets in advance for entry to various nightclubs. Bangla Road sees dense crowds, especially during the peak holiday season in December. Park yourself at a bar, grab a beer and watch the night unfold."
+      },
+      {
+        "Name": "Patong Beach",
+        "Photo": "./data/photos/phuket/landmarks/patong.jpg",
+        "Description": "Patong is a beach resort town on the west coast of Phuket Island, facing the Andaman Sea in the southwest of Thailand. Its sandy, crescent beach is lined with cafes, restaurants and bars. The famously raucous nightlife scene features beer bars, go-go bars, nightclubs, massage parlors and cabarets that overflow into the street along neon-lit Bangla Road and in the Patong OTOP Shopping Paradise complex."
+      },
+      {
+        "Name": "Chaithararam Temple",
+        "Photo": "./data/photos/phuket/landmarks/temple.jpg",
+        "Description": "The most important of the 29 buddhist temples of Phuket is Wat Chalong or formally Wat Chaiyathararam, located in the Chalong Subdistrict, Mueang Phuket District."
+      },
+      {
+        "Name": "Old Phuket Town",
+        "Photo": "./data/photos/phuket/landmarks/town.jpg",
+        "Description": "Lively Phuket Old Town is known for brightly painted, century-old Sino-Portuguese townhouses, with a well-preserved row along Soi Rommanee. Main street Thalang Road has stores selling artisanal ice cream and batik fabrics and a Sunday market for souvenirs and street food like fried banana. The Thai Hua Museum features exhibits on Chinese immigrant culture, and Jui Tui Shrine displays colorful statues of Chinese gods."
+      },
+      {
+        "Name": "Layan Beach",
+        "Photo": "./data/photos/phuket/landmarks/layan.jpg",
+        "Description": "Far from the crowds, Layan Beach is a small, easily accessible Phuket paradise. Tree-fringed beaches such as Layan are very popular."
+      },
+      {
+        "Name": "Wat Phra Thong",
+        "Photo": "./data/photos/phuket/landmarks/wat.jpg",
+        "Description": "Situated on Thep Krasattri Road, Thep Krasattri sub-district, this Temple is home to a large, gold-covered Buddha image known as Phra Phut"
+      },
+      {
+        "Name": "Saphan Sarasin Bridge",
+        "Photo": "./data/photos/phuket/landmarks/saphan.jpg",
+        "Description": "Sarasin Bridge is a bridge in Thailand which connects the island of Phuket with Phang Nga in southern Thailand. It is known as one of the most beautiful bridges in Thailand and contains an unforgettable story as part of its history. It was built in 1951 and officially opened on July 7, 1967."
+      },
+      {
+        "Name": "Tsunami Memorial Park",
+        "Photo": "./data/photos/phuket/landmarks/tsunami.jpg",
+        "Description": "Tsunami Park aims to commemorate the tsunami that occurred in Thailand on December 26, 2004."
+      }
+    ]
+  },
+  "Sydney": {
+    "attractions": [
+      {
+        "Name": "Madame Tussauds Sydney",
+        "Description": "Get up-close and personal with your favourite celebrities and become the star of the story with their new immersive experiences. Heroes Unite! The Justice League have swooped into Madame Tussauds Sydney and they need your help to save the world! Wield the power of Wonder Woman’s wrist gauntlets, help Superman lift a real helicopter and summon Batman with the Bat Signal and power up The Flash into battle – now open, only at Madame Tussauds Sydney! Step into the spotlight and accept your MTV best newcomer award presented by superstar Adele, kick goals with soccer legend Tim Cahill or get your selfie with two of Australia's hottest stars - Chris and Liam Hemsworth. From posing with the stars and experiencing the all-new interactive features, Madame Tussauds Sydney is open daily from 10am and promises start-to-finish fun in the heart of Sydney’s CBD in Darling Harbour. For more information and to book tickets, visit the official Madame Tussauds Sydney website.",
+        "Photo": "./data/photos/sydney/attractions/madam_tussauds.jpg"
+      },
+      {
+        "Name": "Circular Quay",
+        "Description": "Circular Quay is a colorful port where ferries and cruise ships board and depart, and boat watching can be as good a pastime as people watching. While street performers entertain outside, those wanting a more cultural experience can head into the Museum of Contemporary Art where a sculpture garden on the roof is as much a view as the waterways below.",
+        "Photo": "./data/photos/sydney/attractions/circular_quay.jpg"
+      },
+      {
+        "Name": "Sea Life Sydney Aquarium",
+        "Description": "Embark on a journey of amazing discovery through SEA LIFE Sydney Aquarium’s extraordinary zones including Day and Night on the Reef. Experience the iconic wonders of the Great Barrier Reef and be amazed as it transitions from night to day in the largest Great Barrier Reef exhibit in the world. Meet the marine turtles, reef sharks & hundreds of tropical fish that call the reef home. Get face-to-fin with over 13,000 animals in an impressive six million litres of water as you explore sub-Antarctic Penguins in the Penguin Expedition boat ride, South Coast Shipwreck, Dugong Island and meet our resident dugong, Pig, to learn all about his heart-warming rescue story. Then face your fears at Shark Valley, a 100 metre ocean-tunnel walk-through, full of jaw-some sharks and huge rays! Make sure you join in with our interactive daily talks, or book ahead to join us for a Penguin Passport experience, a behind-the-scenes fish feeding or take the plunge with the new Shark Dive Xtreme!",
+        "Photo": "./data/photos/sydney/attractions/circular_quay.jpg"
+      },
+      {
+        "Name": "Australian National Maritime Museum",
+        "Description": "We share stories of the sea. Visit us in Darling Harbour to explore tall ships and beautiful boats, dive under the sea on a submarine, discover contemporary exhibitions and enjoy creative family activities.",
+        "Photo": "./data/photos/sydney/attractions/maritime_museum.jpg"
+      },
+      {
+        "Name": "Sydney Harbour Bridge",
+        "Description": "Spanning the city center to the North Shore, the Sydney Harbour Bridge is a wide steel arch bridge known for its beauty as well as function, providing a crossing for cars, trains, bikes and pedestrians. While the more daring can do the BridgeClimb to the top of the structure, opened to traffic in 1932, anyone can enjoy a walk for free.",
+        "Photo": "./data/photos/sydney/attractions/harbour_bridge.jpg"
+      },
+      {
+        "Name": "Sydney Tower Eye Observation Deck",
+        "Description": "At 250 metres above street level, Sydney Tower Eye is the highest point in Sydney - perfect for finding your bearings or just taking it all in. It's the perfect place to start your Sydney adventure. With views stretching out as far as the eye can see in all directions, there's no better place to find your bearings. Sydney Tower Eye is a true year-round visitor attraction. Gazing out across the beautiful harbour city you'll be captivated by the views of stunning Sydney in all its glory. Crystal clear skies in winter make for the best viewing distances of the year, while in Spring the explosion of Jacaranda Trees covers the Eastern Suburbs in vibrant splashes of purple. Sydney is at its best in Summer, and guests soak up the city's laid back Summer vibe from the cool air-conditioned deck as the streets swelter below. Autumn brings gorgeous orangery glows and the best sunsets of the year - the perfect time for 'that' picture of the city and harbour in the background.",
+        "Photo": "./data/photos/sydney/attractions/tower.jpg"
+      },
+      {
+        "Name": "Darling Harbour",
+        "Description": "Scenic entertainment complex that features shops, restaurants, museums and other tourist attractions.",
+        "Photo": "./data/photos/sydney/attractions/darling_harbour.jpg"
+      }
+    ],
+    "restaurants": [
+      {
+        "Name": "Aalia",
+        "Diet Options": "Vegetarian Friendly, Vegan Options, Gluten Free Options",
+        "Address": "25 Martin Pl Shop, Sydney, Australia",
+        "Price Range": "N/A",
+        "Photo": "./data/photos/sydney/restaurants/aalia.jpg"
+      },
+      {
+        "Name": "Sokyo",
+        "Diet Options": "Vegetarian Friendly, Vegan Options, Gluten Free Options",
+        "Address": "80 Pyrmont St, Pyrmont NSW 2009, Australia",
+        "Price Range": "£41 - £129",
+        "Photo": "./data/photos/sydney/restaurants/sokyo.jpg"
+      },
+      {
+        "Name": "The Gantry Restaurant",
+        "Diet Options": "Vegetarian Friendly, Vegan Options, Gluten Free Options",
+        "Address": "11 Hickson Rd, Dawes Point NSW 2000, Australia",
+        "Price Range": "£10 - £61",
+        "Photo": "./data/photos/sydney/restaurants/the_gantry.jpg"
+      },
+      {
+        "Name": "Claires kitchen at le Salon",
+        "Diet Options": "Vegetarian Friendly, Vegan Options, Gluten Free Options",
+        "Address": "19 Oxford St, Surry Hills NSW 2010, Australia",
+        "Price Range": "£10 - £47",
+        "Photo": "./data/photos/sydney/restaurants/claires_kitchen.jpg"
+      },
+      {
+        "Name": "Flying Fish Restaurant & Bar",
+        "Diet Options": "Vegetarian Friendly, Vegan Options, Gluten Free Options",
+        "Address": "2/26-32 Pirrama Rd, Jones Bay Wharf, Pyrmont NSW 2009, Australia",
+        "Price Range": "£10 - £47",
+        "Photo": "./data/photos/sydney/restaurants/flying_fish.jpg"
+      },
+      {
+        "Name": "LuMi Bar & Dining",
+        "Diet Options": "Vegetarian Friendly, Vegan Options, Gluten Free Options",
+        "Address": "56 Pirrama Rd, Pyrmont NSW 2009, Australia",
+        "Price Range": "£62 - £93",
+        "Photo": "./data/photos/sydney/restaurants/lumi_bar.jpg"
+      }
+  
+    ],
+    "landmarks": [
+      {
+        "Name": "Sydney Opera House",
+        "Photo": "./data/photos/sydney/landmarks/opera_house.jpg",
+        "Description": "One of the most iconic buildings in the world – the Sydney Opera House is an architectural masterpiece and vibrant performance space. It's a place where the past shapes the future, where conventions are challenged and cultures are celebrated. Step inside and discover the stories that make the Opera House so inspiring. Whether you’re a local or a tourist, a first-timer or an aficionado, the Sydney Opera House has something for everyone."
+      },
+      {
+        "Name": "Sydney Town Hall",
+        "Photo": "./data/photos/sydney/landmarks/town_hall.jpg",
+        "Description": "Sydney Town Hall is a working building and the home of the City of Sydney Council. More than 300 events are held in the building each year, including concerts, exhibitions and special events. Events that are publicly accessible can be found listed on the City's What's on website Tours of the Sydney Town Hall are conducted by the Friends of the Town Hall. To make enquiries regarding the tours and to check availability, please call the Town Hall in advance."
+      },
+      {
+        "Name": "OzPaddle",
+        "Photo": "./data/photos/sydney/landmarks/ozpaddle.jpg",
+        "Description": "Open from sunrise, my kayaking tours are truly unique- educating and inspiring you to kayak more. Operating in the best part of Sydney harbour, only place to reach Sydney opera house by kayak. It is surprisingly quiet so no need to worry about harbour traffic and the views of Sydney are simply magnificent. My tours include many photos and there is no better photo in Sydney than being in a kayak in front of the iconic Sydney Opera House and Harbour Bridge to show friends and family. Unlike other tour operators, I have a competitive paddling background and am an instructor not just a guide so I give instruction on correct technique and use the best kayaking equipment to make it easier for everyone to paddle. I have a lockable facility for your bags and you can use the facilities at the pool after to shower and change. No coffees on board, it’s all about kayaking, but there is a cafe at the pool for you to enjoy before/ after. A fun, challenging and invigorating activity for everyone."
+      },
+      {
+        "Name": "Pyrmont Bridge",
+        "Photo": "./data/photos/sydney/landmarks/pyrmont_bridge.jpg",
+        "Description": "The original docklands of Darling Harbour have been transformed into a tourist mecca with entertainment for the whole family. Cockle Bay Wharf offers dining options from budget to upscale and million dollar views of the harbour. Young crowds gather on weekends for nightlife that ranges from salsa clubs to Dj’s. Families can visit the Chinese Gardens of Friendship or the Sydney Aquarium, one of the largest in the world. The Sydney Maritime Museum and the IMAX theatre are also popular attractions. The Harbourside Shopping Centre is a site unto itself, with hundreds of shops, restaurants and bars. On Saturdays in the summer, the city puts on a spectacular fireworks show along the harbour's shore and there are plenty of other free events during the year - Darling Harbour Fiesta, VIVID’s light installations and the Sydney Festival, just to name a few."
+      },
+      {
+        "Name": "Bondi Beach",
+        "Photo": "./data/photos/sydney/landmarks/bondi_beach.jpg",
+        "Description": "Bondi Beach is famous for its glistening ocean, pristine sands, reliable surf and seaside spirit. It's laid back coastal lifestyle, cafe culture, boutique shops and thriving, eclectic community is equally enticing."
+      },
+      {
+        "Name": "Macquarie Lighthouse",
+        "Photo": "./data/photos/sydney/landmarks/macquarie.jpg",
+        "Description": "Located along the scenic Federation Cliff Walk at Vaucluse in Sydney's Eastern Suburbs, Macquarie Lightstation is the site of Australia’s first lighthouse. Completed in 1818, Macquarie Lighthouse was designed by convict architect Francis Greenway for Lachlan Macquarie, the Governor of NSW. Owing to crumbling foundations, it was reconstructed in the 1880s. The replacement tower was designed by the state’s Colonial Architect, James Barnet, to closely resemble Greenway’s original. Standing at 26 metres tall, Barnet's iteration of Macquarie Lighthouse continues to be source of fascination for visitors."
+      },
+      {
+        "Name": "Hyde Park",
+        "Photo": "./data/photos/sydney/landmarks/hyde_park.jpg",
+        "Description": "Hyde Park, Sydney, is an urban park, of 16.2-hectare (40-acre), located in the central business district of Sydney, in the City of Sydney local government area of New South Wales, Australia. It is the oldest public parkland in Australia. Hyde Park is on the eastern fringe of the Sydney city centre and is approximately rectangular in shape, being squared at the southern end and rounded at the northern end. It is bordered on the west by Elizabeth Street, on the east by College Street, on the north by St James Road and Prince Albert Road and on the south by Liverpool Street."
+      }
+    ]
+  },
+  "Zurich": {
+    "attractions": [
+      {
+        "Name": "Grindelwald First Top of Adventure",
+        "Description": "Switzerland is famed for the spectacular beauty of its mountain landscapes, so ensure you don’t miss top Alpine sights during your time in Zurich. Ideal for those with an appetite for adventure, this full-day tour gives you the opportunity to explore Bernese Oberland on a scooter, mountain cart, zipline, and cable car. See, too, the beautiful scenery of Interlaken and Grindelwald, and experience the exhilaration of the First Cliff Walk by Tissot",
+        "Photo": "./data/photos/zurich/attractions/grindelwald.jpg"
+      },
+      {
+        "Name": "Heidiland and Liechtenstein Tour from Zurich",
+        "Description": "If you want to visit \"Heidiland\" but don’t know the best way to get there, this day trip from Zurich is the ticket. You’ll visit the village of Maienfeld, where the beloved Heidi books were set, and spend time in Zurich and Vaduz, the capital of Liechtenstein, too. It’s the perfect way to learn the region’s history and culture while following in the footsteps of Heidi in the Swiss mountains.",
+        "Photo": "./data/photos/zurich/attractions/heidiland.jpg"
+      },
+      {
+        "Name": "Jungfraujoch Day Trip from Zurich",
+        "Description": "A journey to the UNESCO-listed Jungfraujoch mountain is well worth the views, but it can be quite the hassle planning your visit. A guided day trip is the easiest way to visit Switzerland’s must-see mountaintop, with additional pit stops at Interlaken and Grindelwald for a deeper look at Bernese Oberland culture. Plus, you're sure to stay comfortable in any weather during your ride from and to Zurich in a climate-controlled vehicle.",
+        "Photo": "./data/photos/zurich/attractions/jungfraujoch.jpg"
+      },
+      {
+        "Name": "Mount Titlis and Lucerne Day Trip from Zurich",
+        "Description": "Mt. Titlis lives up to its hype as one of Switzerland's top destinations, and a guided day trip is the easiest way to see it from Zurich. Travel by coach and panoramic cable car to the summit without worrying about navigation or organizing tickets. Activity fees and a stop in Lucerne are included, and a skiing option is available in winter. Plus, photo stops at scenic spots break up the long journey.",
+        "Photo": "./data/photos/zurich/attractions/mount_titlis.jpg"
+      },
+      {
+        "Name": "Swiss Alps",
+        "Description": "Head to the heart of Switzerland’s Alpine wonderland on a full-day tour of Interlaken and Grindelwald from Zurich. Travel by luxury coach and soak up the mountainous scenery as you travel. Explore the resort of Interlaken independently on arrival, and then venture to Grindelwald, known as Glacier Village, due to its array of snow-capped mountain spires. Opt to take a cable car ride up Mt. First during the summer months in order to enjoy unrivaled panoramic views.",
+        "Photo": "./data/photos/zurich/attractions/swiss_alps.jpg"
+      },
+      {
+        "Name": "Zurich Highlights Tour",
+        "Description": "Zurich is known for its many sights, but navigating them all on your own can be tricky. Find your way around Switzerland’s biggest city with ease on this half-day tour and discover top attractions including Bahnhofstrasse, the Old Town, and Lake Zurich, before widening your perspective on an included boat tour, Lindt Home of Chocolate visit and tasting.",
+        "Photo": "./data/photos/zurich/attractions/zurich_highlights_tour.jpg"
+      }
+    ],
+    "restaurants": [
+      {
+        "Name": "Bianchi",
+        "Diet Options": ["Vegetarian Friendly", "Vegan Options", "Gluten Free Options"],
+        "Address": "Limmatquai 82, 8001 Zürich, Switzerland",
+        "Price": "£16 - £54",
+        "Photo": "./data/photos/zurich/restaurants/bianchi.jpeg"
+      },
+      {
+        "Name": "Hato",
+        "Diet Options": ["Vegetarian Friendly", "Vegan Options", "Gluten Free Options"],
+        "Address": "Brandschenkestrasse, 8001 Zürich, Switzerland",
+        "Price": "£26 - £69",
+        "Photo": "./data/photos/zurich/restaurants/hato1.jpg"
+      },
+      {
+        "Name": "Heugumper",
+        "Diet Options": ["Suitable for vegetarians", "vegan dishes", "gluten-free dishes"],
+        "Address": "Waaggasse 5, 8001 Zürich, Switzerland",
+        "Price": "14€ - 58€",
+        "Photo": "./data/photos/zurich/restaurants/heugumper1.jpg"
+      },
+      {
+        "Name": "Marktkuche",
+        "Diet Options": ["Vegetarian Friendly", "Vegan Options", "Gluten Free Options"],
+        "Address": "Bäckeranlage, 8004 Zürich, Switzerland",
+        "Price": "£48 - £128",
+        "Photo": "./data/photos/zurich/restaurants/marktkuche1.jpg"
+      },
+      {
+        "Name": "Veltlinerkeller",
+        "Diet Options": ["Vegetarian Friendly"],
+        "Address": "Vegetarian Friendly",
+        "Price": "£30 - £100",
+        "Photo": "./data/photos/zurich/restaurants/veltlinerkeller.jpg"
+      },
+      {
+        "Name": "Weisses Roessli",
+        "Diet Options": ["Vegetarian Friendly"],
+        "Address": "Schlüsselgasse 8, 8001 Zürich, Switzerland",
+        "Price": "£30 - £100",
+        "Photo": "./data/photos/zurich/restaurants/weisses_roessli1.jpg"
+      },
+      {
+        "Name": "Zeughauskeller",
+        "Diet Options": ["Suitable for vegetarians"],
+        "Address": "Bahnhofstrasse 28/A, 8001 Zürich, Switzerland",
+        "Price": "£20 - £80",
+        "Photo": "./data/photos/zurich/restaurants/zeughauskeller1.jpg"
+      },
+      {
+        "Name": "Zunfthaus zur Waag",
+        "Diet Options": ["Suitable for vegetarians", "vegan dishes", "gluten-free dishes"],
+        "Address": "Münsterhof 8, 8001 Zürich, Switzerland",
+        "Price": "37€ - 58€",
+        "Photo": "./data/photos/zurich/restaurants/zunfthaus_zur_waag.jpg"
+      }
+    ],
+    "landmarks": [
+      {
+        "Name": "Bellevue Square",
+        "Photo": "./data/photos/zurich/landmarks/bellevue_square.jpg",
+        "Description": "Named after the Grand Bellevue Hotel, this square is located right next to the lake, offering pretty views of this beautiful water body. It is one of the main public transport points of the city and is often very busy in terms of traffic too. A great place to be in the summer, this square has many cafes and terrace restaurants in its vicinity. If you’re visiting around Christmas, you might even find a nice Christmas market at this square. Stop by for a coffee or some souvenir shopping at this area and watch the busy city go about its life."
+      },
+      {
+        "Name": "Fraumunster",
+        "Photo": "./data/photos/zurich/landmarks/fraumunster1.jpg",
+        "Description": "The Fraumunster Church in Zurich is one of the most important churches in the city. It was established in 853 by Louis the German for his daughter, Hildegard, on the grounds of a convent. He enriched the Benedictine religious circle with the terrains of Zurich, Uri, and the Albis woodland, and allowed the community safety, setting it under his immediate authority. The convent was broken up on 30 November 1524 over the span of the reorganization of Huldrych Zwingli. The cloister edifices were pulverized in 1898 to make space for the new Stadthaus.(delete) The church building today serves as the ward chapel for one of the city's 34 improved areas. Munsterhof, the town square before Fraumünster, is named after the previous abbey that had been present there. This location is recommended for those people who want to get a feel for the austere places that this otherwise modern town can offer. Make it a point to visit on an afternoon and watch the light coming in from the ornate windows."
+      },
+      {
+        "Name": "Grossmunster",
+        "Photo": "./data/photos/zurich/landmarks/grossmunster.jpg",
+        "Description": "The Grossmünster is a Romanesque-style Protestant church in Zurich, Switzerland. It is one of the three major holy places in the city. The center of the present building, close to the banks of the Limmat River, was built on the site of a Carolingian temple, which was, as per legend, initially appointed by Charlemagne. The Grossmünster was a cloister chapel, vying for priority with the Fraumünster over the Limmat all through the Middle Ages. The twin towers of the Grossmunster are viewed as maybe the most distinguished milestone in Zurich. Architecturally, the church is acknowledged Romanesque in style and subsequently a part of the first dish European engineering pattern since Imperial Roman structural planning. In keeping with the Romanesque structural style, Grossmünster offers an incredible cut entrance offering medieval sections with grotesques beautifying the capitals. A Romanesque tomb dates as far back as the eleventh and thirteenth centuries."
+      },
+      {
+        "Name": "Lake Zurich",
+        "Photo": "./data/photos/zurich/landmarks/lake_zurich.jpg",
+        "Description": "A great place for an evening stroll or even to take in the atmosphere of Zurich, this lake is the focal point of this beautiful city. A popular spot for picnics and excursions, the lake has become a grand recreational spot in Zurich. There are a number of attractions and restaurants surrounding the lake. You can choose to take a boat ride on the waters of Lake Zurich or even admire it from one of the many beautiful spots surroundings. There are a number of events that happen against the backdrop of the lake on a regular basis. Lake Zurich is definitely one of the most admired parts of the city."
+      },
+      {
+        "Name": "Loorenkopf Aussichtsturm",
+        "Photo": "./data/photos/zurich/landmarks/loorenkopf.jpeg",
+        "Description": "Loorenkopf tower is a 33-metre (108 ft) high freestanding wood lattice tower on Adlisberg, north of Witikon in Zürich, Switzerland. It was built in 1954. The tower is owned by Zürich city and it is open to the public. The tower is located within the forest at an altitude of 694 m (2,277 ft). The upper platform is reached by 153 steps. On a clear day with high visibility, you can see Eiger, Mönch and Jungfrau."
+      },
+      {
+        "Name": "Niederdorfstrasse",
+        "Photo": "./data/photos/zurich/landmarks/niederdorf.jpg", 
+        "Description": "A part of the Old town in Zurich, Neiderdorf is a neighborhood that seems to be stuck in time. Full of unique boutiques selling everything from clothes to trinkets, this place is great to stroll around. It’s labyrinths are also full of cafes and restaurants serving all types of cuisines. This popular promenade is always buzzing with people because of the fascinating sights that surround it. The best part about this street is that it is pedestrian only making it a stress-free zone. There’s some exciting nightlife in this area too."
+      },
+      {
+        "Name": "Old Town",
+        "Photo": "./data/photos/zurich/landmarks/old_town1.jpg",
+        "Description": "Perched on either sides of River Limmat, the Old town is one of the prettiest parts of the city. The narrow alleyways and cobblestoned streets make for a great stroll especially because of the charming old buildings in the backdrop. The grandeur of medieval churches like Fraumuenster and Grossmuenster make for stunning landmarks at this atmospheric place. A great beginning for your trip to Zurich, this area is full of petit boutiques and small eateries that serve heartwarming specialties and ambiance. This is also the epicenter of Zurich’s colorful nightlife and is easily accessible from most tourist areas of Zurich."
+      },
+      {
+        "Name": "Hauptbahnhof",
+        "Photo": "./data/photos/zurich/landmarks/zuerich_hauptbahnhof.jpg",
+        "Description": "Zürich Hauptbahnhof (often shortened to Zürich HB, or just HB; Zürich Main Station or Zürich Central Station) is the largest railway station in Switzerland and one of the busiest in Europe. Zürich is a major railway hub, with services to and from across Switzerland and neighbouring countries such as Germany, Italy, Austria and France. The station was originally constructed as the terminus of the Spanisch Brötli Bahn, the first railway built completely within Switzerland. Serving up to 2,915 trains per day, Zürich HB is one of the busiest railway stations in the world. It was ranked as the second-best European railway station in 2020."
+      }
+    ]
+  }
+}

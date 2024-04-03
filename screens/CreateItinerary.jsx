@@ -7,11 +7,14 @@ import Header from '../components/Header';
 import { useNavigation } from '@react-navigation/native';
 import { addItinerary } from '../db.api.jsx'
 import { auth, db } from '../firebase';
+import destinationsData from '../data/destinations.json';
+
 
 const ItineraryCreateScreen = ({ route }) => {
-  const { city, image } = route.params; // Retrieve city and image from route params
+  const { city,image } = route.params; // Retrieve city and image from route params
   const navigation = useNavigation(); // Use navigation hook
 
+  const cityData = destinationsData[city];
 
   const [name, setName] = useState('');
   const [startDate, setStartDate] = useState(null);
@@ -31,6 +34,10 @@ const ItineraryCreateScreen = ({ route }) => {
       setEndDate(date);
     }
   };
+
+  const attractions = cityData.attractions;
+  const restaurants = cityData.restaurants;
+  const landmarks = cityData.landmarks;
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
@@ -68,43 +75,41 @@ const ItineraryCreateScreen = ({ route }) => {
 
   // Function to add a card to the itinerary
   const addToItinerary = (item, category) => {
-    console.log('Item:', item); // Log the item object
     // Check if the item is already added
-    if (!itinerary.find(card => card.id === item.id)) {
+    if (!itinerary.some(card => card.id === item.id)) {
       setItinerary([...itinerary, item]); // Add item to itinerary
-      console.log('Added to itinerary:', item.name);
-      showMessage('Added to itinerary: ' + item.name, category); // Show message
+      showMessage('Added to itinerary', category); // Show message
     } else {
       showMessage('Item already added to itinerary', category); // Show message if item is already added
     }
   };
+  
 
   // Function to remove a card from the itinerary
   const removeFromItinerary = (item, category) => {
     const updatedItinerary = itinerary.filter(card => card.id !== item.id);
     setItinerary(updatedItinerary);
-    console.log('Removed from itinerary:', item.name);
-    showMessage('Removed from itinerary: ' + item.name, category); // Show message
+    showMessage('Removed from itinerary', category); // Show message
   };
 
-  // Dummy data for attractions, restaurants, and landmarks
-  const attractions = [
-    { id: 1, name: 'Attraction 1', description: 'Description of attraction 1' },
-    { id: 2, name: 'Attraction 2', description: 'Description of attraction 2' },
-    { id: 3, name: 'Attraction 3', description: 'Description of attraction 3' },
-  ];
+  // // Dummy data for attractions, restaurants, and landmarks
+  // const attractions = [
+  //   { id: 1, name: 'Attraction 1', description: 'Description of attraction 1' },
+  //   { id: 2, name: 'Attraction 2', description: 'Description of attraction 2' },
+  //   { id: 3, name: 'Attraction 3', description: 'Description of attraction 3' },
+  // ];
 
-  const restaurants = [
-    { id: 1, name: 'Restaurant 1', description: 'Description of restaurant 1' },
-    { id: 2, name: 'Restaurant 2', description: 'Description of restaurant 2' },
-    { id: 3, name: 'Restaurant 3', description: 'Description of restaurant 3' },
-  ];
+  // const restaurants = [
+  //   { id: 1, name: 'Restaurant 1', description: 'Description of restaurant 1' },
+  //   { id: 2, name: 'Restaurant 2', description: 'Description of restaurant 2' },
+  //   { id: 3, name: 'Restaurant 3', description: 'Description of restaurant 3' },
+  // ];
 
-  const landmarks = [
-    { id: 1, name: 'Landmark 1', description: 'Description of landmark 1' },
-    { id: 2, name: 'Landmark 2', description: 'Description of landmark 2' },
-    { id: 3, name: 'Landmark 3', description: 'Description of landmark 3' },
-  ];
+  // const landmarks = [
+  //   { id: 1, name: 'Landmark 1', description: 'Description of landmark 1' },
+  //   { id: 2, name: 'Landmark 2', description: 'Description of landmark 2' },
+  //   { id: 3, name: 'Landmark 3', description: 'Description of landmark 3' },
+  // ];
 
   return (
     <View style={styles.container}>
@@ -194,83 +199,84 @@ const ItineraryCreateScreen = ({ route }) => {
 
         <View style={styles.categoriesContainer}>
 
-          {/* Attractions container */}
-          <View style={[styles.categoryContainer, styles.attractionsContainer]}>
-            <Text style={styles.categoryTitle}>Attractions</Text>
-            <Text style={styles.messageText}>{messages['attractions']}</Text>
-            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-              {attractions.map(attraction => (
-                <View key={attraction.id} style={styles.card}>
-                  <View style={styles.cardImageContainer}>
-                    <Image source={image} style={styles.cardImage} />
+      {/* Attractions container */}
+<View style={[styles.categoryContainer, styles.attractionsContainer]}>
+  <Text style={styles.categoryTitle}>Attractions</Text>
+  <Text style={styles.messageText}>{messages['attractions']}</Text>
+  <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
 
-                    <View style={styles.attractionButtonContainer}>
-                      <TouchableOpacity onPress={() => addToItinerary(attraction, 'attractions')}>
-                        <Icon name="add-circle" type="ionicon" color="#556C2F" size={30} />
-                      </TouchableOpacity>
-                      <TouchableOpacity onPress={() => removeFromItinerary(attraction, 'attractions')}>
-                        <Icon name="remove-circle" type="ionicon" color="#C49F5A" size={30} />
-                      </TouchableOpacity>
-                    </View>
-                  </View>
-                  <Text style={styles.cardTitle}>{attraction.name}</Text>
-                  <Text style={styles.cardDescription}>{attraction.description}</Text>
-                </View>
-              ))}
-            </ScrollView>
+    {attractions.map(attraction => (
+      <View key={attraction.Name} style={styles.card}>
+        <View style={styles.cardImageContainer}>
+          <Image source={{ uri: attraction.Photo }} style={styles.cardImage} />
+        
+          <View style={styles.attractionButtonContainer}>
+            <TouchableOpacity onPress={() => addToItinerary(attraction, 'attractions')}>
+              <Icon name="add-circle" type="ionicon" color="#556C2F" size={40} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => removeFromItinerary(attraction, 'attractions')}>
+              <Icon name="remove-circle" type="ionicon" color="#C49F5A" size={40} />
+            </TouchableOpacity>
           </View>
+        </View>
+        <Text style={styles.cardTitle}>{attraction.Name}</Text>
+        <Text style={styles.cardDescription}>{attraction.Description}</Text>
+      </View>
+    ))}
+  </ScrollView>
+</View>
 
-
-          {/* Restaurants container */}
-          <View style={[styles.categoryContainer, styles.restaurantsContainer]}>
-            <Text style={styles.categoryTitle}>Restaurants</Text>
-            <Text style={styles.messageText}>{messages['restaurants']}</Text>
-            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-              {restaurants.map(restaurant => (
-                <View key={restaurant.id} style={styles.card}>
-                  <View style={styles.cardImageContainer}>
-                    <Image source={image} style={styles.cardImage} />
-                    <View style={styles.restaurantButtonContainer}>
-                      <TouchableOpacity onPress={() => addToItinerary(restaurant, 'restaurants')}>
-                        <Icon name="add-circle" type="ionicon" color="#556C2F" size={30} />
-                      </TouchableOpacity>
-                      <TouchableOpacity onPress={() => removeFromItinerary(restaurant, 'restaurants')}>
-                        <Icon name="remove-circle" type="ionicon" color="#C49F5A" size={30} />
-                      </TouchableOpacity>
-                    </View>
-                  </View>
-                  <Text style={styles.cardTitle}>{restaurant.name}</Text>
-                  <Text style={styles.cardDescription}>{restaurant.description}</Text>
-                </View>
-              ))}
-            </ScrollView>
+{/* Restaurants container */}
+<View style={[styles.categoryContainer, styles.restaurantsContainer]}>
+  <Text style={styles.categoryTitle}>Restaurants</Text>
+  <Text style={styles.messageText}>{messages['restaurants']}</Text>
+  <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+    {restaurants.map(restaurant => (
+      <View key={restaurant.Name} style={styles.card}>
+        <View style={styles.cardImageContainer}>
+          <Image source={{ uri: restaurant.Photo }} style={styles.cardImage} />
+          <View style={styles.restaurantButtonContainer}>
+            <TouchableOpacity onPress={() => addToItinerary(restaurant, 'restaurants')}>
+              <Icon name="add-circle" type="ionicon" color="#556C2F" size={40} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => removeFromItinerary(restaurant, 'restaurants')}>
+              <Icon name="remove-circle" type="ionicon" color="#C49F5A" size={40} />
+            </TouchableOpacity>
           </View>
+        </View>
+        <Text style={styles.cardTitle}>{restaurant.Name}</Text>
+        <Text style={styles.cardDescription}>{restaurant.Address}</Text>
+      </View>
+    ))}
+  </ScrollView>
+</View>
 
-
-          {/* Landmarks container */}
-          <View style={[styles.categoryContainer, styles.landmarksContainer]}>
-            <Text style={styles.categoryTitle}>Landmarks</Text>
-            <Text style={styles.messageText}>{messages['landmarks']}</Text>
-            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-              {landmarks.map(landmark => (
-                <View key={landmark.id} style={styles.card}>
-                  <View style={styles.cardImageContainer}>
-                    <Image source={image} style={styles.cardImage} />
-                    <View style={styles.landmarkButtonContainer}>
-                      <TouchableOpacity onPress={() => addToItinerary(landmark, 'landmarks')}>
-                        <Icon name="add-circle" type="ionicon" color="#556C2F" size={30} />
-                      </TouchableOpacity>
-                      <TouchableOpacity onPress={() => removeFromItinerary(landmark, 'landmarks')}>
-                        <Icon name="remove-circle" type="ionicon" color="#C49F5A" size={30} />
-                      </TouchableOpacity>
-                    </View>
-                  </View>
-                  <Text style={styles.cardTitle}>{landmark.name}</Text>
-                  <Text style={styles.cardDescription}>{landmark.description}</Text>
-                </View>
-              ))}
-            </ScrollView>
+{/* Landmarks container */}
+<View style={[styles.categoryContainer, styles.landmarksContainer]}>
+  <Text style={styles.categoryTitle}>Landmarks</Text>
+  <Text style={styles.messageText}>{messages['landmarks']}</Text>
+  <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+    {landmarks.map(landmark => (
+      <View key={landmark.Name} style={styles.card}>
+        <View style={styles.cardImageContainer}>
+          <Image source={{ uri: landmark.Photo }} style={styles.cardImage} />
+          <View style={styles.landmarkButtonContainer}>
+            <TouchableOpacity onPress={() => addToItinerary(landmark, 'landmarks')}>
+              <Icon name="add-circle" type="ionicon" color="#556C2F" size={40} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => removeFromItinerary(landmark, 'landmarks')}>
+              <Icon name="remove-circle" type="ionicon" color="#C49F5A" size={40} />
+            </TouchableOpacity>
           </View>
+        </View>
+        <Text style={styles.cardTitle}>{landmark.Name}</Text>
+        <Text style={styles.cardDescription}>{landmark.Description}</Text>
+      </View>
+    ))}
+  </ScrollView>
+</View>
+
+
         </View>
       </ScrollView>
       
@@ -394,7 +400,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   categoryTitle: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 10,
     fontFamily: 'Poppins',
@@ -434,13 +440,13 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   cardTitle: {
-    fontSize: 16,
+    fontSize: 17,
     fontWeight: 'bold',
     marginBottom: 5,
     fontFamily: 'Poppins',
   },
   cardDescription: {
-    fontSize: 14,
+    fontSize: 15,
     color: '#666',
     fontFamily: 'Poppins',
   },
