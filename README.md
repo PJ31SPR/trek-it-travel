@@ -2,11 +2,19 @@
 
 Trek-It Travel is a project that provides information about popular destinations around the world. It includes details about attractions, landmarks, and restaurants in each destination.
 
+## Features
+- SignUp and Login with Email Account
+- Search for destination by city
+- Browse attractions, restaurants and landmarks of the specific city
+- Create, save and delete itineraries
+- View user Profile details, upload/change avatar
+
 ## What's Included
 
 **Data**: The project includes a data folder containing JSON files with information about destinations such as Rome, Barcelona, Dubai, and Mexico City. Each destination contains data about attractions, restaurants, and landmarks.
 
 **Firebase Configuration**: To use Firebase features such as authentication and Firestore, you need to create a firebase.js file in the root directory. Here's an example of what the file should contain:
+
 ```javascript
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -51,11 +59,14 @@ Install dependencies by running **npm install**.
 
 Start the development server:
 
-For Android: npm run android
-For iOS: npm run ios
-For web: npm run web
+For Android: **npm run android**
+For iOS: **npm run ios**
+For web: **npm run web**
 
 Open your preferred web browser and navigate to the specified URL to view the application.
+
+Alternatively use the **Expo Go** app on your phone, scan the QR code from your terminal to run the application. 
+Sometimes if any of the above do not show product on Expo Go, please run: **npx expo start --tunnel**
 
 ## Dependencies
 
