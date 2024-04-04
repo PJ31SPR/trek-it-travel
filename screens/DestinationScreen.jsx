@@ -8,14 +8,14 @@ const DestinationScreen = () => {
     const navigation = useNavigation();
     // Dummy data for featured destinations
     const featuredDestinations = [
-        { id: 1, name: 'Rome', image: require('../images/rome.jpeg'), currency: '' },
-        { id: 2, name: 'Phuket', image: require('../images/thailand.jpeg'), currency: 'Thai Baht' },
-        { id: 3, name: 'Auckland', image: require('../images/new-zealand.jpeg'), currency: 'New Zealand Dollar' },
-        { id: 4, name: 'Mexico City', image: require('../images/mexico.jpeg'), currency: 'Mexican Peso' },
-        { id: 5, name: 'Dubai', image: require('../images/uae.jpeg'), currency: 'United Arab Emirates Dirham' },
-        { id: 6, name: 'Barcelona', image: require('../images/barcelona.jpeg'), currency: '' },
-        { id: 7, name: 'Zurich', image: require('../images/switzerland.jpeg'), currency: 'Swiss Franc' },
-        { id: 8, name: 'Sydney', image: require('../images/sydney.jpeg'), currency: '' },
+        { id: 1, name: 'Rome', image: require('../images/rome.jpeg'), description: "Explore ancient wonders amidst modern charm in Rome, where every cobblestone street whispers tales of emperors and artists." },
+        { id: 2, name: 'Phuket', image: require('../images/thailand.jpeg'), description: "Discover paradise on earth in Phuket, where turquoise waters, pristine beaches, and vibrant nightlife create an unforgettable tropical escape."},
+        { id: 3, name: 'Auckland', image: require('../images/new-zealand.jpeg'), description: "Experience the vibrant pulse of New Zealand's largest city, where stunning landscapes, world-class dining, and captivating culture converge."},
+        { id: 4, name: 'Mexico City', image: require('../images/mexico.jpeg'), description: "Dive into the heart of Mexico's vibrant capital, where ancient pyramids, colorful markets, and a thriving arts scene await in this dynamic metropolis."},
+        { id: 5, name: 'Dubai', image: require('../images/uae.jpeg'), description: "Journey to the future in Dubai, a dazzling oasis in the desert where towering skyscrapers, luxury shopping, and desert adventures redefine extravagance."},
+        { id: 6, name: 'Barcelona', image: require('../images/barcelona.jpeg'), description:"Embrace the rhythm of Barcelona, where ancient history meets modern flair, inviting you to explore its architectural wonders, artistic treasures, and lively tapas scene."},
+        { id: 7, name: 'Zurich', image: require('../images/switzerland.jpeg'), description:"Discover the elegance of Zurich, a picturesque city nestled by pristine lakes and snow-capped mountains, offering a harmonious blend of natural beauty and urban sophistication." },
+        { id: 8, name: 'Sydney', image: require('../images/sydney.jpeg'),description:"Experience the best of city living and beach vibes in Sydney, where golden sands, world-class dining, and a thriving arts scene await beneath the Southern Hemisphere sun."},
     ];
     // Filter destinations based on search term
     const filteredDestinations = featuredDestinations.filter(destination =>
@@ -54,7 +54,7 @@ const DestinationScreen = () => {
                                     />
                                 </TouchableOpacity>
                             </View>
-                            <Text style={styles.cardCurrency}>Currency: {destination.currency}</Text>
+                            <Text style={styles.cardDescription}>{destination.description}</Text>
                         </View>
                     </Card>
                 ))}
@@ -108,10 +108,11 @@ const styles = StyleSheet.create({
             color: '#272343',
             fontFamily: 'Poppins',
         },
-        cardCurrency: {
+        cardDescription: {
             color: '#556C2F',
             marginBottom: 5,
             fontFamily: 'Poppins',
+            textAlign: 'justify'
         },
         buttonContainer: {
             flexDirection: 'column',
