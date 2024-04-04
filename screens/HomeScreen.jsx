@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         overflow: 'hidden', // Ensure the image doesn't overflow the card
         marginHorizontal: 10,
-        width: Dimensions.get('window').width * 0.9, // Adjusted card width to fit the screen width
+        width: Dimensions.get('window').width * 0.8, // Adjusted card width to fit the screen width
         marginVertical: 10,
         
     },
